@@ -1,5 +1,5 @@
 //
-//  CurrencyConvertorVC.swift
+//  WeatherSearchVC.swift
 //  Tourist Helper
 //
 //  Created by Sensehack on 20/12/16.
@@ -9,23 +9,27 @@
 import Foundation
 import UIKit
 
-class CurrencyConvertorVC: UIViewController {
+class WeatherSearchVC: UIViewController {
+
+    
+    //IBOutlets
     
     
-     // MARK: IBOutlets
+    @IBOutlet weak var cityNameTextField: UITextField!
     
-    @IBOutlet weak var currencyCountryPicker: UIPickerView!
-    
-    
-    @IBOutlet weak var amountToBeConvertedTextField: UITextField!
+
     
     
     
+    @IBOutlet weak var latitudeTextField: UITextField!
     
-    @IBOutlet weak var convertedAmountLabel: UILabel!
+    
+    @IBOutlet weak var longitudeTextField: UITextField!
     
     
-    // IBOutlet ends 
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,24 +43,12 @@ class CurrencyConvertorVC: UIViewController {
     
     
     
-    // MARK: IBAction
+    @IBAction func searchByNameButtonPressed(_ sender: AnyObject) {
+    }
     
     
-    @IBAction func convertCurrencyButtonPressed(_ sender: AnyObject) {
-        
-        
-        
-        
-        
-        
-    } // IBAction ends
-    
-    
-    
-    
-    
-    
-    
+    @IBAction func searchByLatLonButtonPressed(_ sender: AnyObject) {
+    }
     
     
     

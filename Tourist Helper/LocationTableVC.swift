@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LocationTableVC : UIViewController {
+class LocationTableVC : UITableViewController {
     
     
     override func viewDidLoad() {
