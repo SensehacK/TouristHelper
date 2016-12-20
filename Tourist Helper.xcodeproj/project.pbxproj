@@ -15,6 +15,10 @@
 		FB53036E1E0960D2008A405D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB53036C1E0960D2008A405D /* LaunchScreen.storyboard */; };
 		FB5303791E0960D2008A405D /* Tourist_HelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5303781E0960D2008A405D /* Tourist_HelperTests.swift */; };
 		FB5303841E0960D2008A405D /* Tourist_HelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5303831E0960D2008A405D /* Tourist_HelperUITests.swift */; };
+		FB5303921E09623B008A405D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5303911E09623B008A405D /* CoreDataStack.swift */; };
+		FB5303941E096296008A405D /* CurrencyConvertorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5303931E096296008A405D /* CurrencyConvertorVC.swift */; };
+		FB5303961E0962B6008A405D /* OpenWeatherConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5303951E0962B6008A405D /* OpenWeatherConstants.swift */; };
+		FB5303981E0962F3008A405D /* LocationWeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5303971E0962F3008A405D /* LocationWeatherVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		FB53037F1E0960D2008A405D /* Tourist HelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tourist HelperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5303831E0960D2008A405D /* Tourist_HelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tourist_HelperUITests.swift; sourceTree = "<group>"; };
 		FB5303851E0960D2008A405D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB5303911E09623B008A405D /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		FB5303931E096296008A405D /* CurrencyConvertorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyConvertorVC.swift; sourceTree = "<group>"; };
+		FB5303951E0962B6008A405D /* OpenWeatherConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherConstants.swift; sourceTree = "<group>"; };
+		FB5303971E0962F3008A405D /* LocationWeatherVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationWeatherVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +108,14 @@
 			isa = PBXGroup;
 			children = (
 				FB5303601E0960D2008A405D /* AppDelegate.swift */,
-				FB5303621E0960D2008A405D /* ViewController.swift */,
 				FB5303641E0960D2008A405D /* Main.storyboard */,
-				FB53036A1E0960D2008A405D /* Assets.xcassets */,
-				FB53036C1E0960D2008A405D /* LaunchScreen.storyboard */,
-				FB53036F1E0960D2008A405D /* Info.plist */,
 				FB5303671E0960D2008A405D /* Tourist_Helper.xcdatamodeld */,
+				FB53039F1E09637A008A405D /* Extras */,
+				FB53039E1E096362008A405D /* Controller */,
+				FB53039D1E09635E008A405D /* Model */,
+				FB53039B1E096339008A405D /* View */,
+				FB5303991E096311008A405D /* Weather */,
+				FB53039A1E09631C008A405D /* Currency */,
 			);
 			path = "Tourist Helper";
 			sourceTree = "<group>";
@@ -126,6 +136,56 @@
 				FB5303851E0960D2008A405D /* Info.plist */,
 			);
 			path = "Tourist HelperUITests";
+			sourceTree = "<group>";
+		};
+		FB5303991E096311008A405D /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				FB5303951E0962B6008A405D /* OpenWeatherConstants.swift */,
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
+		FB53039A1E09631C008A405D /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Currency;
+			sourceTree = "<group>";
+		};
+		FB53039B1E096339008A405D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB5303621E0960D2008A405D /* ViewController.swift */,
+				FB5303971E0962F3008A405D /* LocationWeatherVC.swift */,
+				FB5303931E096296008A405D /* CurrencyConvertorVC.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		FB53039D1E09635E008A405D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB5303911E09623B008A405D /* CoreDataStack.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FB53039E1E096362008A405D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		FB53039F1E09637A008A405D /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				FB53036A1E0960D2008A405D /* Assets.xcassets */,
+				FB53036C1E0960D2008A405D /* LaunchScreen.storyboard */,
+				FB53036F1E0960D2008A405D /* Info.plist */,
+			);
+			name = Extras;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +322,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB5303981E0962F3008A405D /* LocationWeatherVC.swift in Sources */,
+				FB5303961E0962B6008A405D /* OpenWeatherConstants.swift in Sources */,
 				FB5303631E0960D2008A405D /* ViewController.swift in Sources */,
+				FB5303941E096296008A405D /* CurrencyConvertorVC.swift in Sources */,
 				FB5303691E0960D2008A405D /* Tourist_Helper.xcdatamodeld in Sources */,
 				FB5303611E0960D2008A405D /* AppDelegate.swift in Sources */,
+				FB5303921E09623B008A405D /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +571,7 @@
 				FB53038A1E0960D2008A405D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB53038B1E0960D2008A405D /* Build configuration list for PBXNativeTarget "Tourist HelperTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +580,7 @@
 				FB53038D1E0960D2008A405D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB53038E1E0960D2008A405D /* Build configuration list for PBXNativeTarget "Tourist HelperUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +589,7 @@
 				FB5303901E0960D2008A405D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
