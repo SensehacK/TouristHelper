@@ -116,12 +116,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherTableViewCell" id="fVl-71-eBY">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherTableViewCell" textLabel="Vy8-aa-hQ0" detailTextLabel="AvD-F1-lKc" style="IBUITableViewCellStyleValue1" id="fVl-71-eBY">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fVl-71-eBY" id="zYy-Re-Xpy">
                                     <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vy8-aa-hQ0">
+                                            <frame key="frameInset" minX="15" minY="11" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AvD-F1-lKc">
+                                            <frame key="frameInset" minX="316" minY="11" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -132,8 +148,8 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Root View Controller" id="E1v-qs-Ifk">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="9tO-bB-B7u"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="spB-t3-2iN">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="9tO-bB-B7u"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="spB-t3-2iN">
                             <connections>
                                 <segue destination="q7u-2F-VKX" kind="show" id="QeF-yP-RJp"/>
                             </connections>
@@ -145,7 +161,7 @@
             </objects>
             <point key="canvasLocation" x="550" y="510"/>
         </scene>
-        <!--Weather SearchVC-->
+        <!--Weather Search-->
         <scene sceneID="PQi-uy-oHY">
             <objects>
                 <viewController storyboardIdentifier="WeatherSearchVCID" id="q7u-2F-VKX" customClass="WeatherSearchVC" customModule="Tourist_Helper" customModuleProvider="target" sceneMemberID="viewController">
@@ -222,13 +238,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dYn-uf-iBt">
+                                <frame key="frameInset" minX="177" minY="431" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="JID-IX-3BB">
+                                <frame key="frameInset" minX="177" minY="170" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Weather Search" id="D1j-H9-0KP">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="dMI-ng-MQu">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="q7u-2F-VKX" id="ZdS-ap-QHo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cityNameTextField" destination="EP7-T5-HZW" id="Awa-7U-QLn"/>
+                        <outlet property="latLonActivityIndicator" destination="dYn-uf-iBt" id="ToU-hp-wKb"/>
                         <outlet property="latitudeTextField" destination="q8u-qd-w3f" id="wf2-g1-G9H"/>
                         <outlet property="longitudeTextField" destination="QPp-6M-Fz9" id="P6k-dK-i40"/>
+                        <outlet property="nameActivityIndicator" destination="JID-IX-3BB" id="wUU-GF-a0C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8z-Vf-YKA" userLabel="First Responder" sceneMemberID="firstResponder"/>

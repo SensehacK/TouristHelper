@@ -12,11 +12,12 @@ import UIKit
 class WeatherSearchVC: UIViewController {
 
     
-    //IBOutlets
+    //MARK: IBOutlets
     
     
     @IBOutlet weak var cityNameTextField: UITextField!
     
+    @IBOutlet weak var nameActivityIndicator: UIActivityIndicatorView!
 
     
     
@@ -26,10 +27,11 @@ class WeatherSearchVC: UIViewController {
     
     @IBOutlet weak var longitudeTextField: UITextField!
     
+    @IBOutlet weak var latLonActivityIndicator: UIActivityIndicatorView!
     
     
     
-    
+    // IBOutles Ends
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,16 +43,36 @@ class WeatherSearchVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    //MARK: IBActions
     
     @IBAction func searchByNameButtonPressed(_ sender: AnyObject) {
+        
+        
+        
+        
+        
     }
     
     
     @IBAction func searchByLatLonButtonPressed(_ sender: AnyObject) {
+        
+        
+        
+        
+        
+        
     }
     
     
+    
+    @IBAction func cancelButtonPressed(_ sender: AnyObject) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    // IBActions Ends
     
     
 }
