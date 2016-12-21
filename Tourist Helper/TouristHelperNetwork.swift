@@ -201,6 +201,26 @@ class TouristHelperNetwork {
             OpenWeatherConstants.WeatherData.WeatherToday = weatherToday
             OpenWeatherConstants.WeatherData.WeatherDescription = weatherDescription
             
+            
+            guard let jsonSystem = parsedOpenWeatherData["sys"] as? NSDictionary else {
+                
+                print("error in guard Statement while getting System Array Dictionary JSON")
+                return
+                
+            }
+            
+            guard let jsonCountryCode = jsonSystem["country"] as? String else {
+                
+                print("error in guard Statement while getting Main Array Dictionary JSON")
+                return
+                
+            }
+            
+            OpenWeatherConstants.WeatherData.CountryCode = jsonCountryCode
+            
+
+
+            
             self.saveDataToCoreData(city: jsonCityName)
             
             
@@ -423,6 +443,24 @@ class TouristHelperNetwork {
             
             OpenWeatherConstants.WeatherData.WeatherToday = weatherToday
             OpenWeatherConstants.WeatherData.WeatherDescription = weatherDescription
+            
+            
+            guard let jsonSystem = parsedOpenWeatherData["sys"] as? NSDictionary else {
+                
+                print("error in guard Statement while getting System Array Dictionary JSON")
+                return
+                
+            }
+            
+            guard let jsonCountryCode = jsonSystem["country"] as? String else {
+                
+                print("error in guard Statement while getting Main Array Dictionary JSON")
+                return
+                
+            }
+            
+            OpenWeatherConstants.WeatherData.CountryCode = jsonCountryCode
+            
             
             self.saveDataToCoreData(city: jsonCityName)
             
