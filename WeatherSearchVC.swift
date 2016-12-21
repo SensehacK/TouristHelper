@@ -17,6 +17,8 @@ class WeatherSearchVC: UIViewController {
      CoreDataStack.sharedInstance().saveContext()
      */
     
+    // Create an instance to work with the methods in class TouristHelperNetwork.
+    let NetworkTH = TouristHelperNetwork()
     
     //MARK: IBOutlets
     
@@ -53,17 +55,35 @@ class WeatherSearchVC: UIViewController {
     
     @IBAction func searchByNameButtonPressed(_ sender: AnyObject) {
         
+        let enterCityName:String = cityNameTextField.text!
+        
+        //Start Animation of Network Indicator
+        nameActivityIndicator.startAnimating()
+        
+        NetworkTH.getWeatherDataByCity(cityName: enterCityName, completionHandlerForWeatherDataByCity: { (success , error) in
+            
+            if success == true {
+                
+            }
+            
+            else {
+                
+                
+            }
+        
+            
+            
+            
+        })
         
         
-        
-        
-    }
+    } // func searchByNameButtonPressed ends
     
     
     @IBAction func searchByLatLonButtonPressed(_ sender: AnyObject) {
         
-        
-        
+        let enterLatitude = latitudeTextField.text!
+        let enterLongitude = longitudeTextField.text!
         
         
         
