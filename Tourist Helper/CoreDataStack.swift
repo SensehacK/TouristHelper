@@ -20,6 +20,7 @@ class CoreDataStack {
 
     
     
+    // Code from AppDelegate "Include Core Data"
     
     // MARK: - Core Data stack
     

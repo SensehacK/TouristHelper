@@ -25,16 +25,30 @@ struct OpenWeatherConstants {
     
     */
     
+    // Lat & Lon api.openweathermap.org/data/2.5/weather?lat=35&lon=139&APPID=b25ecd39a0f08f16aed86d6ffaafc964
     
     
-    // URL API Scheme
+    
+    // URL API Constants
+    
+    struct URLComponents {
+
     static let APIScheme = "http"
     static let APIHost = "api.openweathermap.org"
-    static let APIPath = "/data/2.5/weather?q="
+    static let APIPath = "/data/2.5/weather"
+    static let QueryCity = "?q="
+    static let QueryLat = "?lat="
+    static let QueryLon = "?lon="
+    static let QueryAPI = "&APPID="
+    static let AppID = "b25ecd39a0f08f16aed86d6ffaafc964"
+    
+    }
     
     
     // Open Weather Information for certain place
-    static let AppID = "b25ecd39a0f08f16aed86d6ffaafc964"
+    
+    struct WeatherData {
+    
     static var City : String!
     static var Latitude : Double!
     static var Longitude : Double!
@@ -44,10 +58,11 @@ struct OpenWeatherConstants {
     static var Humidity : Double!
     static var Wind : Double!
     static var Pressure : Double!
+    static var Temperature : Double!
     static var MinimumTemp : Double!
     static var MaximumTemp : Double!
     
-    
+    }
     
     /*
      
