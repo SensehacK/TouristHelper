@@ -30,6 +30,7 @@ class WeatherSearchVC: UIViewController {
     
     
     
+    
     @IBOutlet weak var latitudeTextField: UITextField!
     
     
@@ -63,6 +64,15 @@ class WeatherSearchVC: UIViewController {
         NetworkTH.getWeatherDataByCity(cityName: enterCityName, completionHandlerForWeatherDataByCity: { (success , error) in
             
             if success == true {
+                DispatchQueue.main.async {
+                    self.nameActivityIndicator.stopAnimating()
+                    self.nameActivityIndicator.isHidden = true
+                    
+                    
+                    
+                    
+                }
+                
                 
             }
             
