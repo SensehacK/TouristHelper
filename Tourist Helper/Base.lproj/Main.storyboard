@@ -414,6 +414,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weather Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8w-dv-KU4">
+                                <frame key="frameInset" minX="210" minY="239" width="133" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQY-QH-fmQ">
+                                <frame key="frameInset" minX="121" minY="86" width="133" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbB-nO-jJA">
+                                <frame key="frameInset" minX="295" minY="20" width="68" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="dgo-Xc-bxp" eventType="touchUpInside" id="5Vd-Xf-0La"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -425,8 +447,10 @@
                         <outlet property="latitudeValueLabel" destination="lFq-kH-Rjh" id="I0g-K2-7lz"/>
                         <outlet property="longitudeValueLabel" destination="6k9-Ll-cIG" id="dQT-VC-juE"/>
                         <outlet property="pressureValue" destination="7sc-Pv-fsG" id="A2j-yw-q94"/>
+                        <outlet property="smallCountryLabel" destination="HQY-QH-fmQ" id="4Pe-Ab-rj9"/>
                         <outlet property="temperatureLabel" destination="461-bO-cjj" id="y9R-1T-kPi"/>
                         <outlet property="weatherDescription" destination="eNX-Gm-VZP" id="36E-Vw-iKY"/>
+                        <outlet property="weatherTodayLabel" destination="R8w-dv-KU4" id="awL-do-g6N"/>
                         <outlet property="windValue" destination="SmG-gD-eSw" id="YHv-rP-zKP"/>
                     </connections>
                 </viewController>
