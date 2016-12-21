@@ -9,6 +9,7 @@
 import CoreData
 
 class CoreDataStack {
+    
     // MARK: Shared Instance
     
     class func sharedInstance() -> CoreDataStack {

@@ -11,6 +11,12 @@ import UIKit
 
 class WeatherSearchVC: UIViewController {
 
+    /*
+     CoreDataStack.sharedInstance().saveContext()
+     let fetchedRequestCity: NSFetchRequest<City> = City.fetchRequest()
+     CoreDataStack.sharedInstance().saveContext()
+     */
+    
     
     //MARK: IBOutlets
     
