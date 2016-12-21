@@ -14,6 +14,7 @@ class LocationWeatherVC: UIViewController {
     //MARK: IBOutlets
     
     @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var smallCountryLabel: UILabel!
     
     // Lat & Lon
     @IBOutlet weak var latitudeValueLabel: UILabel!
@@ -22,6 +23,7 @@ class LocationWeatherVC: UIViewController {
     
     @IBOutlet weak var temperatureLabel: UILabel!
     
+    @IBOutlet weak var weatherTodayLabel: UILabel!
     
     // Extra Labels for City weather parameters
     
@@ -42,12 +44,31 @@ class LocationWeatherVC: UIViewController {
     // IBoutlets ends
     
     
+    var CityCD  : City!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
+        
+        self.cityNameLabel.text =  self.CityCD.cityName
+        self.smallCountryLabel.text =  self.CityCD.countryCode
+        self.weatherDescription.text =  self.CityCD.weatherDescription
+        self.weatherTodayLabel.text =  self.CityCD.weatherToday
+        self.cloudinessValue.text =  self.CityCD.weatherToday
+        
+        self.latitudeValueLabel.text =  "\(self.CityCD.latitude)"
+        self.longitudeValueLabel.text = "\(self.CityCD.longitude)"
+        self.pressureValue.text =  "\(self.CityCD.pressure)"
+        self.windValue.text = "\(self.CityCD.wind)"
+        self.humidityValue.text =  "\(self.CityCD.humidity)"
+        self.temperatureLabel.text = "\(self.CityCD.temperature)°C"
+        
+        self.countryValue.text =  self.CityCD.countryCode
+        self.cityNameLabel.text =  self.CityCD.cityName
+        self.cityNameLabel.text =  self.CityCD.cityName
         
         
     }
@@ -57,9 +78,18 @@ class LocationWeatherVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    
     // Test Github commit errors
     
     
+    
+    
+    @IBAction func cancelButtonPressed(_ sender: AnyObject) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
     
