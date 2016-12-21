@@ -55,8 +55,9 @@ class WeatherSearchVC: UIViewController {
         latitudeTextField.isEnabled = true
         longitudeTextField.isEnabled = true
         
-        
-        
+        cityNameTextField.text = ""
+        latitudeTextField.text = ""
+        longitudeTextField.text = ""
     }
     
     override func didReceiveMemoryWarning() {
@@ -85,7 +86,8 @@ class WeatherSearchVC: UIViewController {
                 DispatchQueue.main.async {
                     self.nameActivityIndicator.stopAnimating()
                     self.nameActivityIndicator.isHidden = true
-                    self.latitudeTextField.isEnabled = true
+                    self.cityNameTextField.isEnabled = true
+                    self.cityNameTextField.text = ""
                     
                     
                     self.dismiss(animated: true, completion: nil)
@@ -99,6 +101,7 @@ class WeatherSearchVC: UIViewController {
                 self.nameActivityIndicator.stopAnimating()
                 self.nameActivityIndicator.isHidden = true
                 self.cityNameTextField.isEnabled = true
+                self.cityNameTextField.text = ""
                 
                 self.showAlert(title: "Error occured", message: "Couldn't get Weather Data by City")
             }
@@ -123,7 +126,9 @@ class WeatherSearchVC: UIViewController {
         
         //text fields enabled
         latitudeTextField.isEnabled = false
-        self.longitudeTextField.isEnabled = false
+        longitudeTextField.isEnabled = false
+        
+        
         NetworkTH.getWeatherDataByLatLon(latitudeWeather: enterLatitude!, longitudeWeather: enterLongitude!, completionHandlerForWeatherDataByLatLon: { (success , error) in
             
             if success == true {
@@ -132,6 +137,10 @@ class WeatherSearchVC: UIViewController {
                     self.latLonActivityIndicator.isHidden = true
                     self.latitudeTextField.isEnabled = true
                     self.longitudeTextField.isEnabled = true
+                    
+                    
+                    self.latitudeTextField.text = ""
+                    self.longitudeTextField.text = ""
                     
                     self.dismiss(animated: true, completion: nil)
                     
@@ -145,6 +154,11 @@ class WeatherSearchVC: UIViewController {
                 self.latLonActivityIndicator.isHidden = true
                 self.latitudeTextField.isEnabled = true
                 self.longitudeTextField.isEnabled = true
+                
+                self.latitudeTextField.text = ""
+                self.longitudeTextField.text = ""
+
+                
                 
                 self.showAlert(title: "Error occured", message: "Couldn't get Weather Data by Lat Lon")
             }
