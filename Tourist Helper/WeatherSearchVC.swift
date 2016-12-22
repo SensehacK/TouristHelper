@@ -48,7 +48,7 @@ class WeatherSearchVC: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         //City search
         nameActivityIndicator.isHidden = true
-        cityNameTextField.isEnabled = false
+        cityNameTextField.isEnabled = true
         
         
         // Lat & Lon

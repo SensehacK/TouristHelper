@@ -33,7 +33,7 @@ struct OpenWeatherConstants {
     
     struct URLComponents {
 
-    static let APIScheme = "http"
+    static let APIScheme = "http://"
     static let APIHost = "api.openweathermap.org"
     static let APIPath = "/data/2.5/weather"
     static let QueryCity = "?q="

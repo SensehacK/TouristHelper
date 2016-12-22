@@ -149,7 +149,11 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Weather Table" id="OVy-tk-Isf">
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="yVC-uN-qRn"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="IV5-C2-odr"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="IV5-C2-odr">
+                            <connections>
+                                <segue destination="q7u-2F-VKX" kind="show" id="jQ7-ky-OhM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
