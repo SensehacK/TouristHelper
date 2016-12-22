@@ -644,14 +644,18 @@ class TouristHelperNetwork {
         let fetchedRequestCity: NSFetchRequest<City> = City.fetchRequest()
        
         
+        
+        
         let cityEntity = NSEntityDescription.entity(forEntityName: "City", in: CoreDataStack.sharedInstance().persistentContainer.viewContext)
         
         let cityObject = City(entity: cityEntity!, insertInto: CoreDataStack.sharedInstance().persistentContainer.viewContext)
         
+        if city != cityObject.cityName {
+        
         cityObject.cityName = city
         CoreDataStack.sharedInstance().saveContext()
         
-        
+        }
         // Debug Prints
         print("func saveDataToCoreData(city: String)")
         

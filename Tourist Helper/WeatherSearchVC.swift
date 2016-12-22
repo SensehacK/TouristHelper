@@ -105,7 +105,8 @@ class WeatherSearchVC: UIViewController {
                     
                     // Debug Prints
                     print(" in Success == true condition of NetworkTH.getWeatherDataByCity(cityName: enterCityName, completionHandlerForWeatherDataByCity: { (success , error) in ")
-                    
+                   
+                    /*
                     //Try manual segue
                     let segueView = self.storyboard?.instantiateViewController(withIdentifier: "LocationWeatherVCID") as! LocationWeatherVC
                     //segueView.CityCD =
@@ -116,7 +117,7 @@ class WeatherSearchVC: UIViewController {
                     
                     // Debug Prints
                     print(" in Success == true condition2 ")
-                    
+                    */
                     self.nameActivityIndicator.stopAnimating()
                     self.nameActivityIndicator.isHidden = true
                     self.cityNameTextField.isEnabled = true
