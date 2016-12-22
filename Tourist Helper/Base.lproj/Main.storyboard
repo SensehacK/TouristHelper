@@ -107,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="-644" y="-286"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Weather Table-->
         <scene sceneID="2TO-M4-YHr">
             <objects>
                 <tableViewController id="an7-pT-U9A" customClass="LocationTableVC" customModule="Tourist_Helper" customModuleProvider="target" sceneMemberID="viewController">
@@ -120,18 +120,18 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fVl-71-eBY" id="zYy-Re-Xpy">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vy8-aa-hQ0">
-                                            <frame key="frameInset" minX="15" minY="11" width="34" height="21"/>
+                                            <frame key="frameInset" minX="15" minY="12" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AvD-F1-lKc">
-                                            <frame key="frameInset" minX="316" minY="11" width="44" height="21"/>
+                                            <frame key="frameInset" minX="316" minY="12" width="44" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -147,19 +147,80 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="E1v-qs-Ifk">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="9tO-bB-B7u"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="spB-t3-2iN">
-                            <connections>
-                                <segue destination="q7u-2F-VKX" kind="show" id="QeF-yP-RJp"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" title="Weather Table" id="OVy-tk-Isf">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="yVC-uN-qRn"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="IV5-C2-odr"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="weatherTableView" destination="f2E-uA-bz7" id="Jz1-hL-6Q6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WWt-eN-doz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="550" y="510"/>
+            <point key="canvasLocation" x="436" y="510"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Dnr-ZS-6qw">
+            <objects>
+                <viewController id="lgs-v7-Gba" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0YO-fR-xNC"/>
+                        <viewControllerLayoutGuide type="bottom" id="8r1-30-2dr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pa0-Wx-Ybc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l2G-ay-Gop">
+                                <frame key="frameInset" minY="20" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Weather Table View" id="k2Q-Cq-ZG2">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="fG1-fQ-Y3d"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="cg9-EN-2Qd"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9GW-13-gNT">
+                                <frame key="frameInset" minY="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="DlT-3z-9MX" detailTextLabel="9Gl-kd-Ag9" style="IBUITableViewCellStyleValue1" id="jQk-Ov-w2o">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jQk-Ov-w2o" id="BJU-PA-WBk">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DlT-3z-9MX">
+                                                    <frame key="frameInset" minX="15" minY="11" width="34" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Gl-kd-Ag9">
+                                                    <frame key="frameInset" minX="316" minY="11" width="44" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="duF-y5-YtX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UTE-qv-hje" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1253.5999999999999" y="505.99700149925042"/>
         </scene>
         <!--Weather Search-->
         <scene sceneID="PQi-uy-oHY">
@@ -468,7 +529,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="an7-pT-U9A" kind="relationship" relationship="rootViewController" id="8tN-Oi-4P4"/>
+                        <segue destination="an7-pT-U9A" kind="relationship" relationship="rootViewController" id="aQp-Rb-MPL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0G-Va-I5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
