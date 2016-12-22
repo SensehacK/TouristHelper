@@ -18,7 +18,6 @@ class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataS
      CoreDataStack.sharedInstance().saveContext()
      CoreDataStack.sharedInstance().persistentContainer.viewContext
      let fetchedRequestCity: NSFetchRequest<City> = City.fetchRequest()
-     CoreDataStack.sharedInstance().saveContext()
      */
     
     
@@ -27,7 +26,8 @@ class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataS
     let fetchedRequestCity: NSFetchRequest<City> = City.fetchRequest()
     var fetchedRequestContCity: NSFetchedResultsController<City>!
     
-    
+    // Create an instance to work with the methods in class TouristHelperNetwork.
+    let NetworkTH = TouristHelperNetwork()
     
     
     //IBoutles 
@@ -35,12 +35,8 @@ class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataS
     
     @IBOutlet var weatherTableView: UITableView!
 
-    
-    
-    
-    
-    
-    
+ 
+    // end IBOutlets
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -67,6 +63,11 @@ class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataS
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        //Reloads Data
+        weatherTableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -78,7 +79,8 @@ class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CityData.count
         
-    }
+    } // tableview noofrows ends
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -90,7 +92,7 @@ class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataS
         
         
         return weatherCell!
-    }
+    } // table view cellforRow Ends
     
     
     
@@ -106,26 +108,36 @@ class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataS
         // Pass the value & switch to Weather View Display Controller
         DispatchQueue.main.async {
            self.present(segueView, animated: true, completion: nil)
-        }
+        }// dispatch ends
         
-        
-        
-        
-    }
+    
+    } // table view did select ends
+    
     
     func refreshTableView () {
         
       let newRefreshWeatherData =   fetchedRequestContCity.fetchedObjects
         
-        
-        
-    }
+        for data in newRefreshWeatherData! {
+            
+            OpenWeatherConstants.WeatherData.City = data.cityName
+            
+            NetworkTH.getWeatherDataByCity(cityName: data.cityName!, completionHandlerForWeatherDataByCity: { (success , error ) in
+                
+                if success != true {
+                    
+                    DispatchQueue.main.async {
+                        self.showAlert(title: "Error Reloading Data", message: "Couldn't get Weather Data again for Refresh button")
+                    } // end dispatch
+  
+                } // if statement end
+                }) // closure ends
+
+        } // array data in Refreshweatherdata ends
+    } // func ends
     
     
-    
-    
-    
-    
+
     // MARK: Show Alert Methods
     
     func showAlert(title : String , message: String) {

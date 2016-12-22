@@ -11,26 +11,27 @@ import UIKit
 
 class WeatherSearchVC: UIViewController {
 
+    
     /*
      CoreDataStack.sharedInstance().saveContext()
+     CoreDataStack.sharedInstance().persistentContainer.viewContext
      let fetchedRequestCity: NSFetchRequest<City> = City.fetchRequest()
-     CoreDataStack.sharedInstance().saveContext()
      */
+    
     
     // Create an instance to work with the methods in class TouristHelperNetwork.
     let NetworkTH = TouristHelperNetwork()
     
     //MARK: IBOutlets
     
+    //Weather by Name search section
     
     @IBOutlet weak var cityNameTextField: UITextField!
     
     @IBOutlet weak var nameActivityIndicator: UIActivityIndicatorView!
 
     
-    
-    
-    
+    //Weather by  Latitude & Longitude Section
     @IBOutlet weak var latitudeTextField: UITextField!
     
     
@@ -92,10 +93,10 @@ class WeatherSearchVC: UIViewController {
                     
                     self.dismiss(animated: true, completion: nil)
                     
-                }
+                }// dispatch ends
+            
                 
-                
-            }
+            } // if statement ends
             
             else {
                 self.nameActivityIndicator.stopAnimating()
@@ -104,11 +105,8 @@ class WeatherSearchVC: UIViewController {
                 self.cityNameTextField.text = ""
                 
                 self.showAlert(title: "Error occured", message: "Couldn't get Weather Data by City")
-            }
-        
-            
-            
-            
+            }// else statement ends
+ 
         }) // task completion handler ends
         
         
@@ -144,10 +142,10 @@ class WeatherSearchVC: UIViewController {
                     
                     self.dismiss(animated: true, completion: nil)
                     
-                }
+                } // dispatch ends
                 
                 
-            }
+            } // if statement ends
                 
             else {
                 self.latLonActivityIndicator.stopAnimating()
@@ -157,24 +155,15 @@ class WeatherSearchVC: UIViewController {
                 
                 self.latitudeTextField.text = ""
                 self.longitudeTextField.text = ""
-
-                
                 
                 self.showAlert(title: "Error occured", message: "Couldn't get Weather Data by Lat Lon")
-            }
+            } // else statement ends
             
-            
-            
-            
+      
         }) // task completion handler ends
         
-        
-        
-        
-        
-        
-    }
-    
+    } // func ends
+
     
     
     @IBAction func cancelButtonPressed(_ sender: AnyObject) {
