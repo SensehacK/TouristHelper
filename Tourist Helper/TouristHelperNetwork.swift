@@ -432,6 +432,8 @@ class TouristHelperNetwork {
             // Debug Prints
             print("OpenWeatherConstants.WeatherData.City = jsonCityName")
             
+            
+            
             OpenWeatherConstants.WeatherData.City = jsonCityName
             
             // checking for Latitude & Longitude in "Coord"
@@ -466,9 +468,42 @@ class TouristHelperNetwork {
             
             
             
+            // checking for Latitude & Longitude in "Coord"
+            
+            guard let jsonWind = parsedOpenWeatherData["wind"] as? NSDictionary else {
+                
+                print("error in guard Statement while getting Wind  Array Dictionary JSON")
+                return
+                
+            }
+            
+            // JSON Co Ordingates Branch data Handling.
+            
+            guard let jsonWindSpeed = jsonWind["speed"] as? Double else {
+                
+                print("error in guard Statement while getting jsonWindSpeed ")
+                return
+                
+            }
+            
+            OpenWeatherConstants.WeatherData.WindSpeed = jsonWindSpeed
+            
+            
+            // JSON Co Ordingates Branch data Handling.
+            
+            guard let jsonWindDeg = jsonWind["deg"] as? Double else {
+                
+                print("error in guard Statement while getting jsonWindDeg ")
+                return
+                
+            }
+            
+            OpenWeatherConstants.WeatherData.WindDeg = jsonWindDeg
             
             
             
+            
+            // Check for Main Array while parsing data. 
             
             guard let jsonMain = parsedOpenWeatherData["main"] as? NSDictionary else {
                 
@@ -586,9 +621,13 @@ class TouristHelperNetwork {
             OpenWeatherConstants.WeatherData.CountryCode = jsonCountryCode
             
             
+            
+            
             self.saveDataToCoreData(city: jsonCityName)
             
+            
             return completionHandlerForWeatherDataByLatLon(true, "")
+            
             
             
         } // end Task
