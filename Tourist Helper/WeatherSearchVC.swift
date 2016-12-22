@@ -23,6 +23,9 @@ class WeatherSearchVC: UIViewController {
     // Create an instance to work with the methods in class TouristHelperNetwork.
     let NetworkTH = TouristHelperNetwork()
     
+    var CityData : [City]!
+    
+    
     //MARK: IBOutlets
     
     //Weather by Name search section
@@ -97,6 +100,23 @@ class WeatherSearchVC: UIViewController {
             
             if success == true {
                 DispatchQueue.main.async {
+                    
+                    
+                    
+                    // Debug Prints
+                    print(" in Success == true condition of NetworkTH.getWeatherDataByCity(cityName: enterCityName, completionHandlerForWeatherDataByCity: { (success , error) in ")
+                    
+                    //Try manual segue
+                    let segueView = self.storyboard?.instantiateViewController(withIdentifier: "LocationWeatherVCID") as! LocationWeatherVC
+                    //segueView.CityCD =
+                    
+                    // Debug Prints
+                    print(" in Success == true condition ")
+                    self.present(segueView, animated: true, completion: nil)
+                    
+                    // Debug Prints
+                    print(" in Success == true condition2 ")
+                    
                     self.nameActivityIndicator.stopAnimating()
                     self.nameActivityIndicator.isHidden = true
                     self.cityNameTextField.isEnabled = true
@@ -143,6 +163,8 @@ class WeatherSearchVC: UIViewController {
             
             if success == true {
                 DispatchQueue.main.async {
+                    
+                    
                     self.latLonActivityIndicator.stopAnimating()
                     self.latLonActivityIndicator.isHidden = true
                     self.latitudeTextField.isEnabled = true
@@ -151,6 +173,8 @@ class WeatherSearchVC: UIViewController {
                     
                     self.latitudeTextField.text = ""
                     self.longitudeTextField.text = ""
+                    
+                    
                     
                     self.dismiss(animated: true, completion: nil)
                     
@@ -182,6 +206,7 @@ class WeatherSearchVC: UIViewController {
     @IBAction func cancelButtonPressed(_ sender: AnyObject) {
         
         self.dismiss(animated: true, completion: nil)
+        
     }
     
     
