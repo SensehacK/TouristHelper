@@ -14,6 +14,7 @@ class TouristHelperNetwork {
     
     
     
+    
     // URL for reference  http:// openweathermap.org/data/2.5/weather?q=vasai&APPID=b25ecd39a0f08f16aed86d6ffaafc964
     
     //MARK: INCOMPLETE
@@ -22,7 +23,7 @@ class TouristHelperNetwork {
     func getWeatherDataByCity(cityName : String, completionHandlerForWeatherDataByCity : @escaping (_ success : Bool , _ error : String)-> Void) {
         
         
-        let urlString = "\(OpenWeatherConstants.URLComponents.APIScheme)\(OpenWeatherConstants.URLComponents.APIHost)\(OpenWeatherConstants.URLComponents.APIHost)\(OpenWeatherConstants.URLComponents.APIPath)\(OpenWeatherConstants.URLComponents.QueryCity)\(cityName)\(OpenWeatherConstants.URLComponents.QueryAPI)\(OpenWeatherConstants.URLComponents.AppID)"
+        let urlString = "\(OpenWeatherConstants.URLComponents.APIScheme)\(OpenWeatherConstants.URLComponents.APIHost)\(OpenWeatherConstants.URLComponents.APIPath)\(OpenWeatherConstants.URLComponents.QueryCity)\(cityName)\(OpenWeatherConstants.URLComponents.QueryAPI)\(OpenWeatherConstants.URLComponents.AppID)"
         
         //Debug Print for URL
         print("\(urlString) ")
@@ -39,9 +40,15 @@ class TouristHelperNetwork {
         //Initiating Task URL request 
         
         let task =  URLSession.shared.dataTask(with: request) { (data , response , error) in
-            
+           
+            // Debug Prints
+            print("in task urlsession")
             
             // guard statements incoming
+            
+            // Debug Prints
+            print("guard statements incoming")
+            
             
             guard let data = data else {
                 print("Data not present,")
@@ -68,6 +75,10 @@ class TouristHelperNetwork {
             
             
             do {
+                
+                // Debug Prints
+                print("parsedOpenWeatherData = try JSONSerializatio")
+                
                 parsedOpenWeatherData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSDictionary
             }
             catch {
@@ -98,6 +109,10 @@ class TouristHelperNetwork {
                 return
                 
             }
+            // Debug Prints
+            print("OpenWeatherConstants.WeatherData.City = jsonCityName")
+           
+            
             
             OpenWeatherConstants.WeatherData.City = jsonCityName
             
@@ -282,9 +297,13 @@ class TouristHelperNetwork {
         //Initiating Task URL request
         
         let task =  URLSession.shared.dataTask(with: request) { (data , response , error) in
-            
+            // Debug Prints
+            print("in task urlsession")
             
             // guard statements incoming
+            
+            // Debug Prints 
+            print("guard statements incoming")
             
             guard let data = data else {
                 print("Data not present,")
@@ -311,6 +330,9 @@ class TouristHelperNetwork {
             
             
             do {
+                // Debug Prints
+                print("parsedOpenWeatherData = try JSONSerializatio")
+                
                 parsedOpenWeatherData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSDictionary
             }
             catch {
@@ -341,6 +363,8 @@ class TouristHelperNetwork {
                 return
                 
             }
+            // Debug Prints
+            print("OpenWeatherConstants.WeatherData.City = jsonCityName")
             
             OpenWeatherConstants.WeatherData.City = jsonCityName
             
@@ -480,9 +504,16 @@ class TouristHelperNetwork {
         let coreData:[City]!
         let fetchedRequestCity: NSFetchRequest<City> = City.fetchRequest()
        
-
+        // Debug Prints
+        print("func saveDataToCoreData(city: String)")
+        
         // Fetch Core Data Object of City
         do{
+            
+            // Debug Prints
+            print("func saveDataToCoreData(city: String) do try catch block")
+            
+            
             coreData = try CoreDataStack.sharedInstance().persistentContainer.viewContext.fetch(fetchedRequestCity)
         }
         catch{
@@ -490,9 +521,44 @@ class TouristHelperNetwork {
             return
         }
         
+        // Debug Prints
+        print("func saveDataToCoreData(city: String) after  catch block")
+        
+        
+        
+        
+        /* Directly save the city name
+        
+         let cityObject : City!
+         cityObject.cityName  = OpenWeatherConstants.WeatherData.City
+         
+        let CityCD  : [City]!
+        let fetchedRequestCity2: NSFetchRequest<City> = City.fetchRequest()
+        do {
+            CityCD =   try CoreDataStack.sharedInstance().persistentContainer.viewContext.fetch(fetchedRequestCity2)
+            
+            
+        }catch {
+            
+        }
+        
+        CityCD.cityName = OpenWeatherConstants.WeatherData.City
+        
+         */
+
+        
+        
+        
+        
+        
         // Parsing core Data object
         for object in coreData
         {
+            
+            // Debug Prints
+            print("func saveDataToCoreData(city: String) object for loop")
+            
+            
             if object.cityName == city
             {
                 object.cityName = OpenWeatherConstants.WeatherData.City
