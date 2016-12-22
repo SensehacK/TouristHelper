@@ -56,7 +56,8 @@ struct OpenWeatherConstants {
     static var WeatherToday : String!
     static var WeatherDescription : String!
     static var Humidity : Double!
-    static var Wind : Double!
+    static var WindSpeed : Double!
+    static var WindDeg : Double!
     static var Pressure : Double!
     static var Temperature : Double!
     static var MinimumTemp : Double!

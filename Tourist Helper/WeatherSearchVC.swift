@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class WeatherSearchVC: UIViewController {
 
@@ -79,6 +80,17 @@ class WeatherSearchVC: UIViewController {
         nameActivityIndicator.isHidden = false
         nameActivityIndicator.startAnimating()
         cityNameTextField.isEnabled = false
+        
+        
+        /*
+        let cityEntity = NSEntityDescription.entity(forEntityName: "City", in: CoreDataStack.sharedInstance().persistentContainer.viewContext)
+        
+        let cityObject = City(entity: cityEntity!, insertInto: CoreDataStack.sharedInstance().persistentContainer.viewContext)
+        
+        cityObject.cityName = "mumbai"
+        CoreDataStack.sharedInstance().saveContext()
+        
+         */
         
         
         NetworkTH.getWeatherDataByCity(cityName: enterCityName, completionHandlerForWeatherDataByCity: { (success , error) in

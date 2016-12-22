@@ -116,6 +116,72 @@ class TouristHelperNetwork {
             
             OpenWeatherConstants.WeatherData.City = jsonCityName
             
+            // checking for Latitude & Longitude in "Coord"
+            
+            guard let jsonCoord = parsedOpenWeatherData["coord"] as? NSDictionary else {
+                
+                print("error in guard Statement while getting Main Array Dictionary JSON")
+                return
+                
+            }
+            
+            // JSON Co Ordingates Branch data Handling.
+            
+            guard let jsonCoordLon = jsonCoord["lon"] as? Double else {
+                
+                print("error in guard Statement while getting jsonCoord Longitude")
+                return
+                
+            }
+            
+            OpenWeatherConstants.WeatherData.Longitude = jsonCoordLon
+            
+            
+            guard let jsonCoordLan = jsonCoord["lat"] as? Double else {
+                
+                print("error in guard Statement while getting jsonCoord Latitude")
+                return
+                
+            }
+            
+            OpenWeatherConstants.WeatherData.Latitude = jsonCoordLan
+            
+            
+            
+            // checking for Latitude & Longitude in "Coord"
+            
+            guard let jsonWind = parsedOpenWeatherData["wind"] as? NSDictionary else {
+                
+                print("error in guard Statement while getting Wind  Array Dictionary JSON")
+                return
+                
+            }
+            
+            // JSON Co Ordingates Branch data Handling.
+            
+            guard let jsonWindSpeed = jsonWind["speed"] as? Double else {
+                
+                print("error in guard Statement while getting jsonWindSpeed ")
+                return
+                
+            }
+            
+            OpenWeatherConstants.WeatherData.WindSpeed = jsonWindSpeed
+            
+            
+            // JSON Co Ordingates Branch data Handling.
+            
+            guard let jsonWindDeg = jsonWind["deg"] as? Double else {
+                
+                print("error in guard Statement while getting jsonWindDeg ")
+                return
+                
+            }
+            
+            OpenWeatherConstants.WeatherData.WindDeg = jsonWindDeg
+            
+            
+            
             
             
             guard let jsonMain = parsedOpenWeatherData["main"] as? NSDictionary else {
@@ -368,6 +434,40 @@ class TouristHelperNetwork {
             
             OpenWeatherConstants.WeatherData.City = jsonCityName
             
+            // checking for Latitude & Longitude in "Coord"
+            
+            guard let jsonCoord = parsedOpenWeatherData["coord"] as? NSDictionary else {
+                
+                print("error in guard Statement while getting Main Array Dictionary JSON")
+                return
+                
+            }
+            
+            // JSON Co Ordingates Branch data Handling.
+            
+            guard let jsonCoordLon = jsonCoord["lon"] as? Double else {
+                
+                print("error in guard Statement while getting jsonCoord Longitude")
+                return
+                
+            }
+            
+            OpenWeatherConstants.WeatherData.Longitude = jsonCoordLon
+            
+            
+            guard let jsonCoordLan = jsonCoord["lat"] as? Double else {
+                
+                print("error in guard Statement while getting jsonCoord Latitude")
+                return
+                
+            }
+            
+            OpenWeatherConstants.WeatherData.Latitude = jsonCoordLan
+            
+            
+            
+            
+            
             
             
             guard let jsonMain = parsedOpenWeatherData["main"] as? NSDictionary else {
@@ -504,6 +604,15 @@ class TouristHelperNetwork {
         let coreData:[City]!
         let fetchedRequestCity: NSFetchRequest<City> = City.fetchRequest()
        
+        
+        let cityEntity = NSEntityDescription.entity(forEntityName: "City", in: CoreDataStack.sharedInstance().persistentContainer.viewContext)
+        
+        let cityObject = City(entity: cityEntity!, insertInto: CoreDataStack.sharedInstance().persistentContainer.viewContext)
+        
+        cityObject.cityName = city
+        CoreDataStack.sharedInstance().saveContext()
+        
+        
         // Debug Prints
         print("func saveDataToCoreData(city: String)")
         
@@ -523,6 +632,7 @@ class TouristHelperNetwork {
         
         // Debug Prints
         print("func saveDataToCoreData(city: String) after  catch block")
+        
         
         
         
@@ -568,7 +678,7 @@ class TouristHelperNetwork {
                 object.longitude = OpenWeatherConstants.WeatherData.Longitude
                 object.minimumTemperature = OpenWeatherConstants.WeatherData.MinimumTemp
                 object.maximumTemperature = OpenWeatherConstants.WeatherData.MaximumTemp
-                object.wind = OpenWeatherConstants.WeatherData.Wind
+                object.wind = OpenWeatherConstants.WeatherData.WindSpeed
                 object.pressure = OpenWeatherConstants.WeatherData.Pressure
                 object.humidity = OpenWeatherConstants.WeatherData.Humidity
                 object.weatherToday = OpenWeatherConstants.WeatherData.WeatherToday
