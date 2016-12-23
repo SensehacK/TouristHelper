@@ -109,8 +109,19 @@ class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataS
         
         weatherCell?.textLabel?.text = CityData[indexPath.row].cityName
         
-        weatherCell?.detailTextLabel?.text = "Weather \(CityData[indexPath.row].weatherToday) Temperature: \(CityData[indexPath.row].temperature)"
         
+      // optional chaining & extra debugs : Suggestion by code Reviewer to remove "Optional Value"
+        let weatherTodayTemp = CityData[indexPath.row].weatherToday
+        //print("***************")
+        //print(weatherTodayTemp)
+        
+        if let weatherTodayTemp = weatherTodayTemp {
+           // print("***************")
+           // print(weatherTodayTemp)
+        
+        weatherCell?.detailTextLabel?.text = "\(weatherTodayTemp) Temp: \(CityData[indexPath.row].temperature)"
+      
+        }
         
         return weatherCell!
     } // table view cellforRow Ends

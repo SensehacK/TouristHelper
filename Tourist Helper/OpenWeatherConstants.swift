@@ -65,6 +65,19 @@ struct OpenWeatherConstants {
     
     }
     
+    
+    // URL API Constants
+    
+    struct CurrencyConvertor {
+        
+        static let ApiFixerIO = "http://api.fixer.io/latest"
+        
+        static var currencyRate : [Double] = []
+        static var currencyCountry :[String] = []
+    }
+
+    
+    
     /*
      
      

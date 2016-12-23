@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB41C03A1E0D8F0800B5F80F /* CurrencyConvertorNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB41C0391E0D8F0800B5F80F /* CurrencyConvertorNetwork.swift */; };
 		FB4E99771E0AB39D007599CF /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4E99751E0AB39D007599CF /* City+CoreDataClass.swift */; };
 		FB4E99781E0AB39D007599CF /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4E99761E0AB39D007599CF /* City+CoreDataProperties.swift */; };
 		FB5303611E0960D2008A405D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5303601E0960D2008A405D /* AppDelegate.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB41C0391E0D8F0800B5F80F /* CurrencyConvertorNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyConvertorNetwork.swift; sourceTree = "<group>"; };
 		FB4E99751E0AB39D007599CF /* City+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "City+CoreDataClass.swift"; path = "../City+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FB4E99761E0AB39D007599CF /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "City+CoreDataProperties.swift"; path = "../City+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FB53035D1E0960D2008A405D /* Tourist Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tourist Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +191,7 @@
 			children = (
 				FB5303951E0962B6008A405D /* OpenWeatherConstants.swift */,
 				FB6EFCCF1E0A4B2D00FCC8FE /* TouristHelperNetwork.swift */,
+				FB41C0391E0D8F0800B5F80F /* CurrencyConvertorNetwork.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				FB5303691E0960D2008A405D /* Tourist_Helper.xcdatamodeld in Sources */,
 				FB5303611E0960D2008A405D /* AppDelegate.swift in Sources */,
 				FB5303921E09623B008A405D /* CoreDataStack.swift in Sources */,
+				FB41C03A1E0D8F0800B5F80F /* CurrencyConvertorNetwork.swift in Sources */,
 				FB4E99771E0AB39D007599CF /* City+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
