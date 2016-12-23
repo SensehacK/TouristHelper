@@ -25,6 +25,11 @@ API calls Behind the Scenes :
 	Github  : https://github.com/hakanensari/fixer-io/
 
 
+Icons Link :
+
+Made a splash screen. Yet to link it.
+Icons by icons 8 https://icons8.com/
+
 
 SensehacK
 
