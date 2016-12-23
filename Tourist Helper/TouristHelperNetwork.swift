@@ -23,6 +23,8 @@ class TouristHelperNetwork {
     func getWeatherDataByCity(cityName : String, completionHandlerForWeatherDataByCity : @escaping (_ success : Bool , _ error : String)-> Void) {
         
         
+        
+        
         let urlString = "\(OpenWeatherConstants.URLComponents.APIScheme)\(OpenWeatherConstants.URLComponents.APIHost)\(OpenWeatherConstants.URLComponents.APIPath)\(OpenWeatherConstants.URLComponents.QueryCity)\(cityName)\(OpenWeatherConstants.URLComponents.QueryAPI)\(OpenWeatherConstants.URLComponents.AppID)"
         
         //Debug Print for URL

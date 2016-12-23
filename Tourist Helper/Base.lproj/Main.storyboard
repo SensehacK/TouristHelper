@@ -94,11 +94,11 @@
             </objects>
             <point key="canvasLocation" x="549.60000000000002" y="-287.40629685157421"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Currency Convertor-->
         <scene sceneID="Ei4-Xu-JIe">
             <objects>
                 <navigationController id="fGE-M9-33x" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="mostRecent" id="dBz-Yz-3Xm"/>
+                    <tabBarItem key="tabBarItem" title="Currency Convertor" image="Currency" id="dBz-Yz-3Xm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dnq-dA-Gqc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -296,7 +296,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="461-bO-cjj">
-                                <frame key="frameInset" minX="16" minY="227" width="125" height="108"/>
+                                <frame key="frameInset" minX="16" minY="199" width="125" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -366,28 +366,28 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFq-kH-Rjh">
-                                <frame key="frameInset" minX="118" minY="120" width="42" height="21"/>
+                                <frame key="frameInset" minX="118" minY="147" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJm-dh-PhF">
-                                <frame key="frameInset" minX="210" minY="120" width="77" height="21"/>
+                                <frame key="frameInset" minX="210" minY="147" width="77" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6k9-Ll-cIG">
-                                <frame key="frameInset" minX="317" minY="119" width="42" height="21"/>
+                                <frame key="frameInset" minX="317" minY="146" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Latitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdy-mN-ylr">
-                                <frame key="frameInset" minX="29" minY="120" width="63" height="21"/>
+                                <frame key="frameInset" minX="29" minY="147" width="63" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -428,13 +428,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQY-QH-fmQ">
-                                <frame key="frameInset" minX="121" minY="86" width="133" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbB-nO-jJA">
                                 <frame key="frameInset" minX="295" minY="20" width="68" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -443,6 +436,13 @@
                                     <action selector="cancelButtonPressed:" destination="dgo-Xc-bxp" eventType="touchUpInside" id="5Vd-Xf-0La"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQY-QH-fmQ">
+                                <frame key="frameInset" minX="121" minY="79" width="133" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -465,11 +465,11 @@
             </objects>
             <point key="canvasLocation" x="1997.5999999999999" y="509.59520239880067"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Weather-->
         <scene sceneID="xTU-uR-Jbs">
             <objects>
                 <navigationController id="4dr-Vd-NB6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="K9u-KS-I5a"/>
+                    <tabBarItem key="tabBarItem" title="Weather" image="Weather" id="K9u-KS-I5a"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rVd-iO-OBI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -519,4 +519,8 @@
             <point key="canvasLocation" x="-2184" y="127"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Currency" width="29" height="29"/>
+        <image name="Weather" width="29" height="29"/>
+    </resources>
 </document>
