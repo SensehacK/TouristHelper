@@ -196,7 +196,7 @@ class TouristHelperNetwork {
             
             
             // JSON Co Ordingates Branch data Handling.
-            let jsonWindDegYes = 0.0
+            //let jsonWindDegYes = 0.0
             
            /* if  jsonWind["deg"] {
                 

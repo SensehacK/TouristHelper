@@ -263,7 +263,7 @@ class WeatherSearchVC: UIViewController {
     
     @IBAction func weatherTVButtonPressed(_ sender: AnyObject) {
         
-        
+        self.dismiss(animated: true, completion: nil)
         
     }
    
