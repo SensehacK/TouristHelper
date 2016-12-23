@@ -50,6 +50,10 @@ class WeatherSearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.hideKeyboardWhenTappedAround()
+        
+        
         //City search
         nameActivityIndicator.isHidden = true
         cityNameTextField.isEnabled = true
@@ -285,4 +289,25 @@ class WeatherSearchVC: UIViewController {
     }
 
     
+    
+    
+    
+    
+}
+
+// Reference Stack OverFlow http://stackoverflow.com/a/27079103/5177704
+
+
+
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

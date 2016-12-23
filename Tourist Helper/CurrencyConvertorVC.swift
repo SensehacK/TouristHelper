@@ -33,6 +33,9 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // UI extension for gesture initializer for dismiss keyboard
+        self.hideKeyboardWhenTappedAround()
+        
         // Set up URL 
         
         let currencyApiURL = URL(string : "http://api.fixer.io/latest")
