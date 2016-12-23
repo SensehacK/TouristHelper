@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,53 +19,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6MU-S4-aUs">
-                                <frame key="frameInset" minX="64" minY="136" height="161" maxX="65"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="ZLT-sT-afZ" id="D5l-Tv-ojg"/>
-                                    <outlet property="delegate" destination="ZLT-sT-afZ" id="e8P-Ei-NPY"/>
-                                </connections>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Currency Exchange" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIg-3c-I4s">
-                                <frame key="frameInset" minX="47" minY="88" width="286" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Currency Exchange" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIg-3c-I4s">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Powered by fixer.io" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxg-cp-Op8">
-                                <frame key="frameInset" minX="194" minY="586" width="147" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by fixer.io" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxg-cp-Op8">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="9aX-fb-rgC"/>
+                                    <constraint firstAttribute="width" constant="147" id="frq-HA-2Gm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter the Amount for Convertion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jui-WT-GSE">
-                                <frame key="frameInset" minX="61" minY="330" width="253" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the Amount for Convertion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jui-WT-GSE">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X4k-Z3-6cr">
-                                <frame key="frameInset" minX="109" minY="359" width="162" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X4k-Z3-6cr">
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNX-Mf-Y7c">
-                                <frame key="frameInset" minX="169" minY="435" width="197" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNX-Mf-Y7c">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="197" id="Jyw-ev-1qs"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYI-Jy-GV6">
-                                <frame key="frameInset" minX="139" minY="397" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYI-Jy-GV6">
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="kJb-dr-gDI"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Convert">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -73,15 +64,45 @@
                                     <action selector="convertCurrencyButtonPressed:" destination="ZLT-sT-afZ" eventType="touchUpInside" id="rO6-x1-UhM"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Converted Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0i-1n-vwW">
-                                <frame key="frameInset" minX="16" minY="435" width="145" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Converted Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0i-1n-vwW">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="745" translatesAutoresizingMaskIntoConstraints="NO" id="6MU-S4-aUs">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="141" id="zBZ-x2-FB4"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZLT-sT-afZ" id="D5l-Tv-ojg"/>
+                                    <outlet property="delegate" destination="ZLT-sT-afZ" id="e8P-Ei-NPY"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AYI-Jy-GV6" firstAttribute="centerX" secondItem="6MU-S4-aUs" secondAttribute="centerX" id="1tE-uQ-oGr"/>
+                            <constraint firstAttribute="bottom" secondItem="pNX-Mf-Y7c" secondAttribute="bottom" constant="211" id="2Ob-Pp-epq"/>
+                            <constraint firstItem="Jui-WT-GSE" firstAttribute="leading" secondItem="ZoT-20-l4e" secondAttribute="leadingMargin" constant="45" id="6EE-Xg-9xI"/>
+                            <constraint firstItem="6MU-S4-aUs" firstAttribute="top" secondItem="ZoT-20-l4e" secondAttribute="top" constant="135" id="82F-Wh-P3F"/>
+                            <constraint firstItem="qIg-3c-I4s" firstAttribute="leading" secondItem="ZoT-20-l4e" secondAttribute="leadingMargin" constant="31" id="8dc-Ir-Did"/>
+                            <constraint firstItem="AYI-Jy-GV6" firstAttribute="top" secondItem="X4k-Z3-6cr" secondAttribute="bottom" constant="8" symbolic="YES" id="AdG-gR-jAE"/>
+                            <constraint firstItem="X4k-Z3-6cr" firstAttribute="top" secondItem="Jui-WT-GSE" secondAttribute="bottom" constant="8" symbolic="YES" id="FvC-GA-AbH"/>
+                            <constraint firstItem="pNX-Mf-Y7c" firstAttribute="baseline" secondItem="V0i-1n-vwW" secondAttribute="baseline" id="I2p-Me-bzl"/>
+                            <constraint firstItem="qIg-3c-I4s" firstAttribute="centerX" secondItem="X4k-Z3-6cr" secondAttribute="centerX" id="IzC-w2-nab"/>
+                            <constraint firstItem="6MU-S4-aUs" firstAttribute="leading" secondItem="V0i-1n-vwW" secondAttribute="leading" id="LDD-7x-tJb"/>
+                            <constraint firstItem="pNX-Mf-Y7c" firstAttribute="centerX" secondItem="rxg-cp-Op8" secondAttribute="centerX" id="Lfb-gx-Lts"/>
+                            <constraint firstItem="X4k-Z3-6cr" firstAttribute="leading" secondItem="ZoT-20-l4e" secondAttribute="leadingMargin" constant="93" id="OfK-4T-uf0"/>
+                            <constraint firstItem="AYI-Jy-GV6" firstAttribute="centerX" secondItem="Jui-WT-GSE" secondAttribute="centerX" id="U2X-0k-VUh"/>
+                            <constraint firstItem="6MU-S4-aUs" firstAttribute="top" secondItem="qIg-3c-I4s" secondAttribute="bottom" constant="26" id="Uyd-W9-gcU"/>
+                            <constraint firstAttribute="bottom" secondItem="X4k-Z3-6cr" secondAttribute="bottom" constant="278" id="bV5-hH-gfs"/>
+                            <constraint firstItem="6MU-S4-aUs" firstAttribute="trailing" secondItem="ZoT-20-l4e" secondAttribute="trailingMargin" id="d3x-JX-a8j"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pNX-Mf-Y7c" secondAttribute="trailing" constant="-7" id="eOD-RK-oDn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qIg-3c-I4s" secondAttribute="trailing" constant="26" id="gle-ED-rdQ"/>
+                            <constraint firstItem="Guh-NA-add" firstAttribute="top" secondItem="rxg-cp-Op8" secondAttribute="bottom" constant="8" symbolic="YES" id="ikL-mX-nOy"/>
+                            <constraint firstItem="V0i-1n-vwW" firstAttribute="top" secondItem="AYI-Jy-GV6" secondAttribute="bottom" constant="8" symbolic="YES" id="jNP-8a-hLF"/>
+                            <constraint firstItem="pNX-Mf-Y7c" firstAttribute="leading" secondItem="V0i-1n-vwW" secondAttribute="trailing" constant="8" symbolic="YES" id="qrR-vA-s9o"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xYi-A5-2Tp"/>
                     <connections>
@@ -114,14 +135,14 @@
         <!--Weather Table-->
         <scene sceneID="2TO-M4-YHr">
             <objects>
-                <tableViewController id="an7-pT-U9A" customClass="LocationTableVC" customModule="Tourist_Helper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LocationTableVCID" id="an7-pT-U9A" customClass="LocationTableVC" customModule="Tourist_Helper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="f2E-uA-bz7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherTableViewCell" textLabel="Vy8-aa-hQ0" detailTextLabel="AvD-F1-lKc" style="IBUITableViewCellStyleValue1" id="fVl-71-eBY">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fVl-71-eBY" id="zYy-Re-Xpy">
                                     <frame key="frameInset" width="375" height="43.5"/>
@@ -253,6 +274,14 @@
                                 <frame key="frameInset" minX="177" minY="170" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jR-a1-rXy">
+                                <frame key="frameInset" minX="97" minY="527" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Weather Table View"/>
+                                <connections>
+                                    <action selector="weatherTVButtonPressed:" destination="q7u-2F-VKX" eventType="touchUpInside" id="tH6-dM-SmK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -261,6 +290,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="dMI-ng-MQu">
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="q7u-2F-VKX" id="ZdS-ap-QHo"/>
+                                <segue destination="an7-pT-U9A" kind="show" id="sLz-Cy-Z7B"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -274,7 +304,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8z-Vf-YKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775" y="-237"/>
+            <point key="canvasLocation" x="1841" y="-248"/>
         </scene>
         <!--Location WeatherVC-->
         <scene sceneID="tVY-x4-MLr">
@@ -523,4 +553,7 @@
         <image name="Currency" width="29" height="29"/>
         <image name="Weather" width="29" height="29"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="sLz-Cy-Z7B"/>
+    </inferredMetricsTieBreakers>
 </document>

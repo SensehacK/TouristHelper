@@ -43,6 +43,9 @@ class TouristHelperNetwork {
         print("Escaped Character")
         print(escapedCityName)
         
+        /*if optionalCity.isEmpty {
+            
+        } */
         
         let urlString = "\(OpenWeatherConstants.URLComponents.APIScheme)\(OpenWeatherConstants.URLComponents.APIHost)\(OpenWeatherConstants.URLComponents.APIPath)\(OpenWeatherConstants.URLComponents.QueryCity)\(optionalCity)\(OpenWeatherConstants.URLComponents.QueryAPI)\(OpenWeatherConstants.URLComponents.AppID)"
             
@@ -89,6 +92,7 @@ class TouristHelperNetwork {
             // Status code msgs
             guard let statusCodes = (response as? HTTPURLResponse)?.statusCode , statusCodes >= 200 && statusCodes <= 299 else {
                 print("Wrong status codes returned func getWeatherDataByCity")
+                completionHandlerForWeatherDataByCity(false, "")
                 return
             }
             
@@ -189,6 +193,25 @@ class TouristHelperNetwork {
             }
             
             OpenWeatherConstants.WeatherData.WindSpeed = jsonWindSpeed
+            
+            
+            // JSON Co Ordingates Branch data Handling.
+            let jsonWindDegYes = 0.0
+            
+           /* if  jsonWind["deg"] {
+                
+                print("error in guard Statement while getting jsonWindDeg ")
+                
+            
+            } */
+            
+            let jsonWindDeg2 = jsonWind["deg"] as? Double
+            print(jsonWindDeg2)
+            if (jsonWindDeg2?.isZero)! {
+                print("In zero condition jsonWindDeg2?.isZero)! s")
+                OpenWeatherConstants.WeatherData.WindDeg = jsonWindDeg2
+            }
+            
             
             
             // JSON Co Ordingates Branch data Handling.
@@ -765,6 +788,7 @@ class TouristHelperNetwork {
     
 
 
+    
     
     
     

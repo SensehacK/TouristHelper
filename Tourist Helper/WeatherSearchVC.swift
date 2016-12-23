@@ -85,6 +85,20 @@ class WeatherSearchVC: UIViewController {
         cityNameTextField.isEnabled = false
         
         
+        
+        if enterCityName.isEmpty {
+            //Start Animation of Network Indicator
+            nameActivityIndicator.isHidden = true
+            nameActivityIndicator.stopAnimating()
+            cityNameTextField.isEnabled = true
+            
+            self.showAlert(title: "Empty Search Text Field", message: "Please enter a name to search")
+            
+        }
+        
+        
+        
+        
         /*
         let cityEntity = NSEntityDescription.entity(forEntityName: "City", in: CoreDataStack.sharedInstance().persistentContainer.viewContext)
         
@@ -94,6 +108,7 @@ class WeatherSearchVC: UIViewController {
         CoreDataStack.sharedInstance().saveContext()
         
          */
+        
         
         
         NetworkTH.getWeatherDataByCity(cityName: enterCityName, completionHandlerForWeatherDataByCity: { (success , error) in
@@ -132,6 +147,10 @@ class WeatherSearchVC: UIViewController {
             } // if statement ends
             
             else {
+                
+                // Debug Prints
+                print(" in Success == true  else condition of NetworkTH.getWeatherDataByCity ")
+                
                 self.nameActivityIndicator.stopAnimating()
                 self.nameActivityIndicator.isHidden = true
                 self.cityNameTextField.isEnabled = true
@@ -147,9 +166,9 @@ class WeatherSearchVC: UIViewController {
     
     
     @IBAction func searchByLatLonButtonPressed(_ sender: AnyObject) {
+        let tempLat = latitudeTextField.text
+        let tempLon = longitudeTextField.text
         
-        let enterLatitude = Double(latitudeTextField.text!)
-        let enterLongitude = Double(longitudeTextField.text!)
         
         //Start Animation of Network Indicator
         latLonActivityIndicator.isHidden = false
@@ -158,6 +177,37 @@ class WeatherSearchVC: UIViewController {
         //text fields enabled
         latitudeTextField.isEnabled = false
         longitudeTextField.isEnabled = false
+        
+        if (tempLon?.isEmpty)! {
+            print(tempLon)
+            print("is Empty")
+        }
+        if (tempLat?.isEmpty)! || (tempLon?.isEmpty)! {
+            
+            //Start Animation of Network Indicator
+            latLonActivityIndicator.isHidden = true
+            latLonActivityIndicator.stopAnimating()
+            print(tempLon)
+            print("is Empty")
+            print(tempLat)
+            print("is Empty")
+            
+            //text fields enabled
+            latitudeTextField.isEnabled = true
+            longitudeTextField.isEnabled = true
+            self.showAlert(title: "Empty Lat or Lon Text Field", message: "Please enter a Latitude to search")
+        }
+        
+        let enterLatitude = Double(tempLat!)
+        let enterLongitude = Double(tempLon!)
+        
+        /*
+        let enterLatitude = Double(latitudeTextField.text!)
+        let enterLongitude = Double(longitudeTextField.text!)
+        */
+    
+        
+       
         
         
         NetworkTH.getWeatherDataByLatLon(latitudeWeather: enterLatitude!, longitudeWeather: enterLongitude!, completionHandlerForWeatherDataByLatLon: { (success , error) in
@@ -211,8 +261,12 @@ class WeatherSearchVC: UIViewController {
     }
     
     
-    
-    
+    @IBAction func weatherTVButtonPressed(_ sender: AnyObject) {
+        
+        
+        
+    }
+   
     
     
     // IBActions Ends
