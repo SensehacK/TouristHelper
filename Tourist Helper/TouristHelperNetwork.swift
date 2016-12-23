@@ -22,10 +22,30 @@ class TouristHelperNetwork {
     
     func getWeatherDataByCity(cityName : String, completionHandlerForWeatherDataByCity : @escaping (_ success : Bool , _ error : String)-> Void) {
         
+        print("Before Escaped Character")
+        print(cityName)
+        var optionalCity = ""
+        
+        // Reference http://stackoverflow.com/questions/24879659/how-to-encode-a-url-in-swift
+        //var escapedAddress = cityName.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        
+        let escapedCityName  = cityName.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
         
         
         
-        let urlString = "\(OpenWeatherConstants.URLComponents.APIScheme)\(OpenWeatherConstants.URLComponents.APIHost)\(OpenWeatherConstants.URLComponents.APIPath)\(OpenWeatherConstants.URLComponents.QueryCity)\(cityName)\(OpenWeatherConstants.URLComponents.QueryAPI)\(OpenWeatherConstants.URLComponents.AppID)"
+        // ANother optional Chaining reference http://stackoverflow.com/a/26733589/5177704
+        
+        if let escapedCityName2 = escapedCityName {
+            print("In optional chaining syntax")
+            optionalCity = escapedCityName2
+        }
+        
+        print("Escaped Character")
+        print(escapedCityName)
+        
+        
+        let urlString = "\(OpenWeatherConstants.URLComponents.APIScheme)\(OpenWeatherConstants.URLComponents.APIHost)\(OpenWeatherConstants.URLComponents.APIPath)\(OpenWeatherConstants.URLComponents.QueryCity)\(optionalCity)\(OpenWeatherConstants.URLComponents.QueryAPI)\(OpenWeatherConstants.URLComponents.AppID)"
+            
         
         //Debug Print for URL
         print("\(urlString) ")
@@ -195,14 +215,19 @@ class TouristHelperNetwork {
             
             // JSON Main Branch data Handling.
             
-            guard let jsonMainTemp = jsonMain["temp"] as? Double else {
+            guard var jsonMainTemp = jsonMain["temp"] as? Double else {
                 
                 print("error in guard Statement while getting Main Temp")
                 return
                 
             }
             
+            jsonMainTemp = jsonMainTemp/10
+            
+            //Debug Print
+            print(jsonMainTemp)
             OpenWeatherConstants.WeatherData.Temperature = jsonMainTemp
+            
             
             
             guard let jsonMainPressure = jsonMain["pressure"] as? Double else {

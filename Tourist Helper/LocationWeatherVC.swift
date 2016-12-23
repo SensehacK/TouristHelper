@@ -61,9 +61,9 @@ class LocationWeatherVC: UIViewController {
         
         self.latitudeValueLabel.text =  "\(self.CityCD.latitude)"
         self.longitudeValueLabel.text = "\(self.CityCD.longitude)"
-        self.pressureValue.text =  "\(self.CityCD.pressure)"
-        self.windValue.text = "\(self.CityCD.wind)"
-        self.humidityValue.text =  "\(self.CityCD.humidity)"
+        self.pressureValue.text =  "\(self.CityCD.pressure) hpa"
+        self.windValue.text = "\(self.CityCD.wind) m/s "
+        self.humidityValue.text =  "\(self.CityCD.humidity) %"
         self.temperatureLabel.text = "\(self.CityCD.temperature)°C"
         
         self.countryValue.text =  self.CityCD.countryCode
@@ -77,12 +77,6 @@ class LocationWeatherVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
-    
-    // Test Github commit errors
-    
     
     
     
