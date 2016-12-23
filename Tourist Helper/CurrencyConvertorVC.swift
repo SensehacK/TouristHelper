@@ -118,12 +118,27 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
     
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        print("variable currencycountry.count ")
         print(currencyCountry.count)
+        //DEbug print''
+        
+        let tempNumberOfRows = OpenWeatherConstants.CurrencyConvertor.currencyCountry.count
+        //DEbug print''
+        print("variable tempNumberOfRows ")
+        print(tempNumberOfRows)
+        
+        //DEbug print''
+        print("variable  OpenWeatherConstants.CurrencyConvertor.currencyCountry.count ")
+        print((OpenWeatherConstants.CurrencyConvertor.currencyCountry.count))
+        
+        
         return currencyCountry.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        print(currencyCountry[row])
+        //print(currencyCountry[row])
+        
         return currencyCountry[row]
     }
     

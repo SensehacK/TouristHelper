@@ -145,7 +145,7 @@ class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataS
     
     } // table view did select ends
     
-    
+    //MARK: Incomplete.
     func refreshTableView () {
         
       let newRefreshWeatherData =   fetchedRequestContCity.fetchedObjects
