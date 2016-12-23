@@ -65,6 +65,27 @@ class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataS
     
     override func viewWillAppear(_ animated: Bool) {
         //Reloads Data
+        fetchedRequestCity.sortDescriptors = [NSSortDescriptor(key : "cityName" , ascending : true)]
+        
+        let fetchController = NSFetchedResultsController(fetchRequest: fetchedRequestCity, managedObjectContext: CoreDataStack.sharedInstance().persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        
+        fetchController.delegate = self
+        
+        //Do Try catch block fetching objects via sortDescriptors . Fetch controller
+        
+        do {
+            try fetchController.performFetch()
+        }
+        catch {
+            showAlert(title: "Fetch Error", message: "Error catched while performing fetch")
+        }
+        
+        fetchedRequestContCity = fetchController
+        
+        
+        // Assign to the City CoreData & fetch objects.
+        CityData = fetchedRequestContCity.fetchedObjects
+        
         weatherTableView.reloadData()
     }
     
