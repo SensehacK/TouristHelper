@@ -48,8 +48,31 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         self.hideKeyboardWhenTappedAround()
         
       //   NetworkCC.getCurrentCurrencyRates()
-        
-        //Debug 
+       // NetworkTH.getWeatherDataByCity(cityName: enterCityName, completionHandlerForWeatherDataByCity: { (success , error) in
+            
+            NetworkCC.getCurrencyArray(completionHandler: {(success , error) in
+            
+            if success {
+                 print("In success NetworkCC.getCurrencyArray ")
+                
+                self.currencyCountrySS   = OpenWeatherConstants.CurrencyConvertor.currencyCountry
+           self.currencyRateSS   =     OpenWeatherConstants.CurrencyConvertor.currencyRate
+                print(self.currencyCountrySS)
+                print(self.currencyRateSS)
+                
+                
+            } else {
+                self.showAlert(title: "Error", message: "Please Check Internet connection")
+                }
+                
+            
+            self.currencyCountryPicker.reloadAllComponents()
+            })
+            
+            
+            
+            
+        //Debug
         print("NetworkCC.getCurrentCurrencyRates()")
         
         /*
@@ -92,7 +115,7 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         }
         */
         
-        
+        /*
         // Set up URL 
         
         let currencyApiURL = URL(string : "http://api.fixer.io/latest")
@@ -143,7 +166,7 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         task.resume()
   
         
-        // End commenting
+     */   // End commenting
         
         
         
@@ -205,23 +228,23 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         
         */
         
-        //return currencyCountrySS.count
-        return currencyCountry.count
+        return currencyCountrySS.count
+        //return currencyCountry.count
         //return currencyCountryCC.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         //print(currencyCountry[row])
         
-       // return currencyCountrySS[row]
-        return currencyCountry[row]
+       return currencyCountrySS[row]
+      //  return currencyCountry[row]
        // return currencyCountryCC[row]
     }
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //selectedCurrency = currencyRateSS[row]
-        selectedCurrency = currencyRate[row]
+        selectedCurrency = currencyRateSS[row]
+        //selectedCurrency = currencyRate[row]
         //selectedCurrency = currencyRateCC[row]
     }
     

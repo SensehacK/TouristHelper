@@ -33,11 +33,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the Amount for Convertion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jui-WT-GSE">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X4k-Z3-6cr">
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -78,12 +73,17 @@
                                     <outlet property="delegate" destination="ZLT-sT-afZ" id="e8P-Ei-NPY"/>
                                 </connections>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the Amount for Convertion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jui-WT-GSE">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="AYI-Jy-GV6" firstAttribute="centerX" secondItem="6MU-S4-aUs" secondAttribute="centerX" id="1tE-uQ-oGr"/>
                             <constraint firstAttribute="bottom" secondItem="pNX-Mf-Y7c" secondAttribute="bottom" constant="211" id="2Ob-Pp-epq"/>
-                            <constraint firstItem="Jui-WT-GSE" firstAttribute="leading" secondItem="ZoT-20-l4e" secondAttribute="leadingMargin" constant="45" id="6EE-Xg-9xI"/>
+                            <constraint firstItem="Jui-WT-GSE" firstAttribute="leading" secondItem="ZoT-20-l4e" secondAttribute="leadingMargin" constant="31" id="6EE-Xg-9xI"/>
                             <constraint firstItem="6MU-S4-aUs" firstAttribute="top" secondItem="ZoT-20-l4e" secondAttribute="top" constant="135" id="82F-Wh-P3F"/>
                             <constraint firstItem="qIg-3c-I4s" firstAttribute="leading" secondItem="ZoT-20-l4e" secondAttribute="leadingMargin" constant="31" id="8dc-Ir-Did"/>
                             <constraint firstItem="AYI-Jy-GV6" firstAttribute="top" secondItem="X4k-Z3-6cr" secondAttribute="bottom" constant="8" symbolic="YES" id="AdG-gR-jAE"/>
@@ -93,7 +93,7 @@
                             <constraint firstItem="6MU-S4-aUs" firstAttribute="leading" secondItem="V0i-1n-vwW" secondAttribute="leading" id="LDD-7x-tJb"/>
                             <constraint firstItem="pNX-Mf-Y7c" firstAttribute="centerX" secondItem="rxg-cp-Op8" secondAttribute="centerX" id="Lfb-gx-Lts"/>
                             <constraint firstItem="X4k-Z3-6cr" firstAttribute="leading" secondItem="ZoT-20-l4e" secondAttribute="leadingMargin" constant="93" id="OfK-4T-uf0"/>
-                            <constraint firstItem="AYI-Jy-GV6" firstAttribute="centerX" secondItem="Jui-WT-GSE" secondAttribute="centerX" id="U2X-0k-VUh"/>
+                            <constraint firstItem="AYI-Jy-GV6" firstAttribute="centerX" secondItem="Jui-WT-GSE" secondAttribute="centerX" constant="14.25" id="U2X-0k-VUh"/>
                             <constraint firstItem="6MU-S4-aUs" firstAttribute="top" secondItem="qIg-3c-I4s" secondAttribute="bottom" constant="26" id="Uyd-W9-gcU"/>
                             <constraint firstAttribute="bottom" secondItem="X4k-Z3-6cr" secondAttribute="bottom" constant="278" id="bV5-hH-gfs"/>
                             <constraint firstItem="6MU-S4-aUs" firstAttribute="trailing" secondItem="ZoT-20-l4e" secondAttribute="trailingMargin" id="d3x-JX-a8j"/>

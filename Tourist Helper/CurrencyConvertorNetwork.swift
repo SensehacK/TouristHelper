@@ -9,8 +9,6 @@
 import Foundation
 
 
-
-
 class CurrencyConvertorNetwork {
     
     var currencyRate : [Double] = []
@@ -73,6 +71,7 @@ class CurrencyConvertorNetwork {
                         OpenWeatherConstants.CurrencyConvertor.currencyCountry.append((countries as! String))
                         OpenWeatherConstants.CurrencyConvertor.currencyRate.append((rates as! Double))
                         */
+                        
                         
                     }
                     self.success = true
@@ -139,14 +138,19 @@ class CurrencyConvertorNetwork {
                     for (countries , rates) in currencyRates {
                         self.currencyCountry.append((countries as! String))
                         self.currencyRate.append((rates as! Double))
+                        
                     }
                     
                     
                 }
-                
+                print("OpenWeatherConstants.CurrencyConvertor.currencyCountry = self.currencyCountry OpenWeatherConstants.CurrencyConvertor.currencyRate = self.currencyRate")
+                OpenWeatherConstants.CurrencyConvertor.currencyCountry = self.currencyCountry
+                OpenWeatherConstants.CurrencyConvertor.currencyRate = self.currencyRate
+                completionHandler(true, "")
                 
             } catch
             {
+                completionHandler(false, "Error found")
                 print("Error found in JSON Parsing")
             }
             
