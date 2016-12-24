@@ -53,7 +53,7 @@ class CurrencyConvertorNetwork {
                     for (countries , rates) in currencyRates {
                         self.currencyCountry.append((countries as! String))
                         self.currencyRate.append((rates as! Double))
-
+                        
                     }
                     
                     

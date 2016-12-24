@@ -213,7 +213,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Latitude" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWM-pT-tWj">
                                 <frame key="frameInset" minX="43" minY="344" width="94" height="21"/>
@@ -234,7 +234,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfI-Nu-NJ7">
                                 <frame key="frameInset" minX="228" minY="341" width="94" height="27"/>
@@ -249,6 +249,7 @@
                                 <state key="normal" title="Search by Lat &amp; Lon"/>
                                 <connections>
                                     <action selector="searchByLatLonButtonPressed:" destination="q7u-2F-VKX" eventType="touchUpInside" id="ysq-df-riu"/>
+                                    <segue destination="an7-pT-U9A" kind="show" id="ihv-u0-TuJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSY-5x-LeA">
@@ -276,12 +277,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jR-a1-rXy">
-                                <frame key="frameInset" minX="97" minY="527" width="150" height="30"/>
+                                <frame key="frameInset" minX="113" minY="525" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Weather Table View"/>
-                                <connections>
-                                    <action selector="weatherTVButtonPressed:" destination="q7u-2F-VKX" eventType="touchUpInside" id="tH6-dM-SmK"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -291,7 +289,6 @@
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="dMI-ng-MQu">
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="q7u-2F-VKX" id="ZdS-ap-QHo"/>
-                                <segue destination="an7-pT-U9A" kind="show" id="sLz-Cy-Z7B"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -537,6 +534,6 @@
         <image name="Weather" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sLz-Cy-Z7B"/>
+        <segue reference="ihv-u0-TuJ"/>
     </inferredMetricsTieBreakers>
 </document>
