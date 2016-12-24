@@ -15,7 +15,7 @@ class CurrencyConvertorNetwork {
     var currencyCountry :[String] = []
     var success = true
     
-
+/*
     func getCurrentCurrencyRates() {
         
      
@@ -75,10 +75,7 @@ class CurrencyConvertorNetwork {
                         
                     }
                     self.success = true
-                    /*
-                    OpenWeatherConstants.CurrencyConvertor.isSuccess = true
-                    print(OpenWeatherConstants.CurrencyConvertor.isSuccess)
-                    */
+        
                 }
                 //Debug prints
                 print("parsedData :Call  self.assignArray() {")
@@ -100,6 +97,8 @@ class CurrencyConvertorNetwork {
     
     task.resume()
 }
+    */
+    
     
     
     
@@ -166,7 +165,7 @@ class CurrencyConvertorNetwork {
     
 
     
-   // Reference  http://stackoverflow.com/a/31574620/5177704
+  /* // Reference  http://stackoverflow.com/a/31574620/5177704
     func assignArray()
     {
         
@@ -181,7 +180,7 @@ class CurrencyConvertorNetwork {
         
     }
     
-    /*
+    
     func showAlert(title : String , message: String) {
         let alertDisplay = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let pressOK = UIAlertAction(title: "OK", style: .default){
@@ -192,5 +191,6 @@ class CurrencyConvertorNetwork {
         present(alertDisplay, animated: true, completion: nil)
     }
     */
+    
     
 }

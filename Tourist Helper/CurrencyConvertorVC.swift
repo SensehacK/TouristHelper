@@ -13,8 +13,7 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
     
     let NetworkCC = CurrencyConvertorNetwork()
     
-    var currencyRateCC : [Double] = []
-    var currencyCountryCC :[String] = []
+    
     
     var selectedCurrency : Double = 0
     var convertedAmount : Double = 0
@@ -48,18 +47,17 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         self.hideKeyboardWhenTappedAround()
         
       //   NetworkCC.getCurrentCurrencyRates()
-       // NetworkTH.getWeatherDataByCity(cityName: enterCityName, completionHandlerForWeatherDataByCity: { (success , error) in
+    
             
             NetworkCC.getCurrencyArray(completionHandler: {(success , error) in
             
             if success {
                  print("In success NetworkCC.getCurrencyArray ")
                 
-                self.currencyCountrySS   = OpenWeatherConstants.CurrencyConvertor.currencyCountry
-           self.currencyRateSS   =     OpenWeatherConstants.CurrencyConvertor.currencyRate
+                self.currencyCountrySS  = OpenWeatherConstants.CurrencyConvertor.currencyCountry
+                self.currencyRateSS     = OpenWeatherConstants.CurrencyConvertor.currencyRate
                 print(self.currencyCountrySS)
                 print(self.currencyRateSS)
-                
                 
             } else {
                 self.showAlert(title: "Error", message: "Please Check Internet connection")
@@ -75,46 +73,7 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         //Debug
         print("NetworkCC.getCurrentCurrencyRates()")
         
-        /*
-        let bool2 : Bool =  NetworkCC.checkEmail()
-        
-       let bool =  NetworkCC.getCurrentCurrencyRates()
-        
-        */
-        
-        /*
-        let boolConstant =  OpenWeatherConstants.CurrencyConvertor.isSuccess
-        print(" let boolConstant")
-        print(boolConstant)
-        
-        let bool =  NetworkCC.success
-        
-        if bool {
-            /*
-            //Debug
-            print("if bool {")
-
-           currencyRateCC = NetworkCC.currencyRate
-          currencyCountryCC =   NetworkCC.currencyCountry
-            */
-            
-            //Debug
-            print("2nd constants struct")
-            
-            currencyRateCC = OpenWeatherConstants.CurrencyConvertor.currencyRate
-            currencyCountryCC =   OpenWeatherConstants.CurrencyConvertor.currencyCountry
-            print("currencyRateCC")
-            print(currencyRateCC)
-            print("currencyCountryCC")
-            print(currencyCountryCC)
-    
-        }
-        else {
-            
-            print("Error Displayed " )
-        }
-        */
-        
+       
         /*
         // Set up URL 
         
@@ -174,12 +133,6 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
          
  
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
     
     // MARK: IBAction
     
@@ -190,6 +143,18 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
             showAlert(title: "Empty Value", message: "Please enter some value")
             return
         }
+        
+        if selectedCurrency == 0.0 {
+            
+            showAlert(title: "Empty UIPickerView", message: "Please select Currency Country from PickerView")
+        }
+        
+        
+        //let currency
+        //guard let  selectedCurrency
+        
+        print("selectedCurrency")
+        print(selectedCurrency)
         
         convertedAmount = Double(amountToBeConvertedTextField.text!)! * selectedCurrency
         
@@ -208,25 +173,9 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        print("variable currencycountrySS.count ")
-        print(currencyCountrySS.count)
+       // print("variable currencycountrySS.count ")
+        //print(currencyCountrySS.count)
         
-        //DEbug print''
-        
-        /*
-         
-         print("variable currencycountry.count ")
-         print(currencyCountryCC.count)
-        let tempNumberOfRows = OpenWeatherConstants.CurrencyConvertor.currencyCountry.count
-        //DEbug print''
-        print("variable tempNumberOfRows ")
-        print(tempNumberOfRows)
-        
-        //DEbug print''
-        print("variable  OpenWeatherConstants.CurrencyConvertor.currencyCountry.count ")
-        print((OpenWeatherConstants.CurrencyConvertor.currencyCountry.count))
-        
-        */
         
         return currencyCountrySS.count
         //return currencyCountry.count
@@ -243,6 +192,10 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        print("currencyRateSS[row] ")
+        print(currencyRateSS[row])
+        
         selectedCurrency = currencyRateSS[row]
         //selectedCurrency = currencyRate[row]
         //selectedCurrency = currencyRateCC[row]
