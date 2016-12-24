@@ -87,7 +87,11 @@ class TouristHelperNetwork {
                 print("error present")
                 //Debug print
                 print("Error in func getWeatherDataByCity Guard Statement")
-                return
+                
+                let error = error?.localizedDescription
+                
+                
+                return completionHandlerForWeatherDataByCity(false, "\(error)")
             }
             
             // Status code msgs

@@ -142,7 +142,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherTableViewCell" textLabel="Vy8-aa-hQ0" detailTextLabel="AvD-F1-lKc" style="IBUITableViewCellStyleValue1" id="fVl-71-eBY">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fVl-71-eBY" id="zYy-Re-Xpy">
                                     <frame key="frameInset" width="375" height="43.5"/>
@@ -180,7 +180,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="IV5-C2-odr">
                             <connections>
-                                <segue destination="q7u-2F-VKX" kind="show" id="jQ7-ky-OhM"/>
+                                <segue destination="q7u-2F-VKX" kind="show" action="showDetailViewController:sender:" id="jQ7-ky-OhM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -253,7 +253,6 @@
                                 <state key="normal" title="Search by Lat &amp; Lon"/>
                                 <connections>
                                     <action selector="searchByLatLonButtonPressed:" destination="q7u-2F-VKX" eventType="touchUpInside" id="ysq-df-riu"/>
-                                    <segue destination="an7-pT-U9A" kind="show" id="ihv-u0-TuJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSY-5x-LeA">
@@ -262,7 +261,6 @@
                                 <state key="normal" title="Search by Name"/>
                                 <connections>
                                     <action selector="searchByNameButtonPressed:" destination="q7u-2F-VKX" eventType="touchUpInside" id="5I6-fc-yAf"/>
-                                    <segue destination="an7-pT-U9A" kind="show" id="Jnh-rz-dPZ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search by Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKL-S0-hin">
@@ -306,7 +304,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8z-Vf-YKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1841" y="-248"/>
+            <point key="canvasLocation" x="1840.8" y="-248.72563718140933"/>
         </scene>
         <!--Location WeatherVC-->
         <scene sceneID="tVY-x4-MLr">
@@ -538,6 +536,6 @@
         <image name="Weather" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jnh-rz-dPZ"/>
+        <segue reference="aQp-Rb-MPL"/>
     </inferredMetricsTieBreakers>
 </document>

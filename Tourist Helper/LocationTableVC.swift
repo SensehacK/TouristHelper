@@ -60,6 +60,7 @@ class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataS
         
         // Assign to the City CoreData & fetch objects.
         CityData = fetchedRequestContCity.fetchedObjects
+        
         weatherTableView.reloadData()
         
     }
