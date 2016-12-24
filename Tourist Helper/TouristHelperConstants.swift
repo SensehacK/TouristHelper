@@ -74,6 +74,8 @@ struct OpenWeatherConstants {
         
         static var currencyRate : [Double] = []
         static var currencyCountry :[String] = []
+        
+        static var isSuccess : Bool!
     }
 
     

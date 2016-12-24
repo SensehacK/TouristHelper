@@ -19,6 +19,16 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
     var selectedCurrency : Double = 0
     var convertedAmount : Double = 0
     
+    
+    // Old variables 
+    var currencyRate : [Double] = []
+    var currencyCountry :[String] = []
+    
+    
+    //Segue sent data
+    var currencyRateSS : [Double] = []
+    var currencyCountrySS :[String] = []
+    
      // MARK: IBOutlets
     
     @IBOutlet weak var currencyCountryPicker: UIPickerView!
@@ -38,6 +48,7 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         self.hideKeyboardWhenTappedAround()
         
         NetworkCC.getCurrentCurrencyRates()
+        
         //Debug 
         print("NetworkCC.getCurrentCurrencyRates()")
         
@@ -47,21 +58,42 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
        let bool =  NetworkCC.getCurrentCurrencyRates()
         
         */
+        
+        /*
+        let boolConstant =  OpenWeatherConstants.CurrencyConvertor.isSuccess
+        print(" let boolConstant")
+        print(boolConstant)
+        
         let bool =  NetworkCC.success
         
         if bool {
+            /*
             //Debug
             print("if bool {")
 
            currencyRateCC = NetworkCC.currencyRate
           currencyCountryCC =   NetworkCC.currencyCountry
+            */
+            
+            //Debug
+            print("2nd constants struct")
+            
+            currencyRateCC = OpenWeatherConstants.CurrencyConvertor.currencyRate
+            currencyCountryCC =   OpenWeatherConstants.CurrencyConvertor.currencyCountry
+            print("currencyRateCC")
+            print(currencyRateCC)
+            print("currencyCountryCC")
+            print(currencyCountryCC)
+    
         }
         else {
             
             print("Error Displayed " )
         }
+        */
         
         /*
+ 
         // Set up URL 
         
         let currencyApiURL = URL(string : "http://api.fixer.io/latest")
@@ -110,12 +142,13 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         } // task ends
         
         task.resume()
- */
+  */ // End commenting
         
         
         
     }// view did load ends
-    
+         
+ 
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -151,11 +184,15 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        print("variable currencycountry.count ")
-        print(currencyCountryCC.count)
+        print("variable currencycountrySS.count ")
+        print(currencyCountrySS.count)
+        
         //DEbug print''
         
         /*
+         
+         print("variable currencycountry.count ")
+         print(currencyCountryCC.count)
         let tempNumberOfRows = OpenWeatherConstants.CurrencyConvertor.currencyCountry.count
         //DEbug print''
         print("variable tempNumberOfRows ")
@@ -167,38 +204,27 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         
         */
         
-        return currencyCountryCC.count
+        return currencyCountrySS.count
+        //return currencyCountry.count
+        //return currencyCountryCC.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         //print(currencyCountry[row])
         
-        return currencyCountryCC[row]
+        return currencyCountrySS[row]
+        //return currencyCountry[row]
+       // return currencyCountryCC[row]
     }
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedCurrency = currencyRateCC[row]
+        selectedCurrency = currencyRateSS[row]
+        //selectedCurrency = currencyRate[row]
+        //selectedCurrency = currencyRateCC[row]
     }
     
     
     
-    
-    
-    
-    /*
-    // MARK: Show Alert Methods
-    
-    func showAlert(title : String , message: String) {
-        let alertDisplay = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let pressOK = UIAlertAction(title: "OK", style: .default){
-            _ in
-            self.dismiss(animated: true, completion: nil)
-        }
-        alertDisplay.addAction(pressOK)
-        present(alertDisplay, animated: true, completion: nil)
-    }
-
-    */
     
 }
