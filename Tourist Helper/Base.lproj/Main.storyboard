@@ -51,19 +51,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYI-Jy-GV6">
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="DRf-jU-GsI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Convert">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="convertCurrencyButtonPressed:" destination="ZLT-sT-afZ" eventType="touchUpInside" id="rO6-x1-UhM"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0i-1n-vwW">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -83,19 +70,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYI-Jy-GV6">
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="DRf-jU-GsI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Convert">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="convertCurrencyButtonPressed:" destination="ZLT-sT-afZ" eventType="touchUpInside" id="rO6-x1-UhM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6MU-S4-aUs" firstAttribute="top" secondItem="ZoT-20-l4e" secondAttribute="top" constant="117" id="46G-zV-11F"/>
-                            <constraint firstItem="V0i-1n-vwW" firstAttribute="top" secondItem="AYI-Jy-GV6" secondAttribute="bottom" constant="5" id="5cg-VI-SiQ"/>
+                            <constraint firstItem="V0i-1n-vwW" firstAttribute="top" secondItem="AYI-Jy-GV6" secondAttribute="bottom" constant="21" id="5cg-VI-SiQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pNX-Mf-Y7c" secondAttribute="trailing" constant="-7" id="6um-b7-nyR"/>
-                            <constraint firstItem="X4k-Z3-6cr" firstAttribute="leading" secondItem="ZoT-20-l4e" secondAttribute="leadingMargin" constant="92" id="6xA-81-5eL"/>
+                            <constraint firstItem="X4k-Z3-6cr" firstAttribute="leading" secondItem="ZoT-20-l4e" secondAttribute="leadingMargin" constant="69" id="6xA-81-5eL"/>
                             <constraint firstItem="qIg-3c-I4s" firstAttribute="leading" secondItem="ZoT-20-l4e" secondAttribute="leadingMargin" constant="31" id="8dc-Ir-Did"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="X4k-Z3-6cr" secondAttribute="trailing" constant="89" id="FiA-Kd-Ma0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="X4k-Z3-6cr" secondAttribute="trailing" constant="112" id="FiA-Kd-Ma0"/>
                             <constraint firstItem="6MU-S4-aUs" firstAttribute="leading" secondItem="ZoT-20-l4e" secondAttribute="leadingMargin" constant="45" id="K6S-Zz-p5A"/>
                             <constraint firstItem="V0i-1n-vwW" firstAttribute="leading" secondItem="ZoT-20-l4e" secondAttribute="leadingMargin" constant="-1" id="MNA-g9-Kna"/>
-                            <constraint firstItem="X4k-Z3-6cr" firstAttribute="top" secondItem="Jui-WT-GSE" secondAttribute="bottom" constant="18" id="O5B-2d-5rP"/>
-                            <constraint firstItem="AYI-Jy-GV6" firstAttribute="leading" secondItem="ZoT-20-l4e" secondAttribute="leading" constant="138" id="S66-Ox-Dej"/>
+                            <constraint firstItem="X4k-Z3-6cr" firstAttribute="top" secondItem="Jui-WT-GSE" secondAttribute="bottom" constant="2" id="O5B-2d-5rP"/>
+                            <constraint firstItem="AYI-Jy-GV6" firstAttribute="leading" secondItem="ZoT-20-l4e" secondAttribute="leading" constant="118" id="S66-Ox-Dej"/>
                             <constraint firstItem="pNX-Mf-Y7c" firstAttribute="baseline" secondItem="V0i-1n-vwW" secondAttribute="baseline" id="UQe-gM-9FS"/>
                             <constraint firstItem="pNX-Mf-Y7c" firstAttribute="leading" secondItem="V0i-1n-vwW" secondAttribute="trailing" constant="8" symbolic="YES" id="Wad-Cg-EEW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Jui-WT-GSE" secondAttribute="trailing" constant="60" id="bBC-IC-50p"/>
@@ -283,15 +283,15 @@
                             <constraint firstItem="gSY-5x-LeA" firstAttribute="leading" secondItem="Gzx-Oo-qax" secondAttribute="leadingMargin" constant="61" id="0RF-Ta-h8k"/>
                             <constraint firstItem="XWM-pT-tWj" firstAttribute="leading" secondItem="Gzx-Oo-qax" secondAttribute="leadingMargin" constant="29" id="334-Bo-jB1"/>
                             <constraint firstItem="JID-IX-3BB" firstAttribute="leading" secondItem="Gzx-Oo-qax" secondAttribute="leading" constant="45" id="6Vl-w8-pEG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WfI-Nu-NJ7" secondAttribute="trailing" constant="136" id="8Xo-EK-PVd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WfI-Nu-NJ7" secondAttribute="trailing" constant="102" id="8Xo-EK-PVd"/>
                             <constraint firstItem="WfI-Nu-NJ7" firstAttribute="leading" secondItem="XWM-pT-tWj" secondAttribute="trailing" constant="28" id="DLO-oU-vqv"/>
-                            <constraint firstItem="WfI-Nu-NJ7" firstAttribute="trailing" secondItem="QPp-6M-Fz9" secondAttribute="trailing" constant="-38" id="DvK-Qn-yCE"/>
-                            <constraint firstItem="q8u-qd-w3f" firstAttribute="leading" secondItem="Gzx-Oo-qax" secondAttribute="leadingMargin" constant="29" id="EGP-i1-lG4"/>
+                            <constraint firstItem="WfI-Nu-NJ7" firstAttribute="trailing" secondItem="QPp-6M-Fz9" secondAttribute="trailing" constant="5" id="DvK-Qn-yCE"/>
+                            <constraint firstItem="q8u-qd-w3f" firstAttribute="leading" secondItem="Gzx-Oo-qax" secondAttribute="leadingMargin" constant="43" id="EGP-i1-lG4"/>
                             <constraint firstItem="gSY-5x-LeA" firstAttribute="leading" secondItem="EP7-T5-HZW" secondAttribute="leading" id="FqE-T9-872"/>
                             <constraint firstItem="9jR-a1-rXy" firstAttribute="leading" secondItem="Gzx-Oo-qax" secondAttribute="leadingMargin" constant="86" id="Ian-9C-7GB"/>
                             <constraint firstItem="q8u-qd-w3f" firstAttribute="top" secondItem="XWM-pT-tWj" secondAttribute="bottom" constant="28" id="Jb9-AM-bzp"/>
                             <constraint firstItem="JID-IX-3BB" firstAttribute="leading" secondItem="dYn-uf-iBt" secondAttribute="leading" constant="-95" id="LTz-N9-usP"/>
-                            <constraint firstItem="EP7-T5-HZW" firstAttribute="trailing" secondItem="WfI-Nu-NJ7" secondAttribute="trailing" constant="72" id="NOk-hC-qrT"/>
+                            <constraint firstItem="EP7-T5-HZW" firstAttribute="trailing" secondItem="WfI-Nu-NJ7" secondAttribute="trailing" constant="38" id="NOk-hC-qrT"/>
                             <constraint firstItem="JID-IX-3BB" firstAttribute="centerX" secondItem="9jR-a1-rXy" secondAttribute="centerX" constant="-122" id="NVB-Rh-zw7"/>
                             <constraint firstItem="JID-IX-3BB" firstAttribute="top" secondItem="Gzx-Oo-qax" secondAttribute="top" constant="172" id="Ogn-tp-vMK"/>
                             <constraint firstItem="9jR-a1-rXy" firstAttribute="top" secondItem="rrH-7k-SPU" secondAttribute="bottom" constant="8" id="UAR-ky-TuI"/>
