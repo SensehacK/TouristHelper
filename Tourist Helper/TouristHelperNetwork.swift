@@ -139,7 +139,7 @@ class TouristHelperNetwork {
             }
             // Debug Prints
             print("OpenWeatherConstants.WeatherData.City = jsonCityName")
-           
+                print(jsonCityName)
             
             
             OpenWeatherConstants.WeatherData.City = jsonCityName
@@ -504,7 +504,7 @@ class TouristHelperNetwork {
             }
             // Debug Prints
             print("OpenWeatherConstants.WeatherData.City = jsonCityName")
-            
+            print(jsonCityName)
             
             
             OpenWeatherConstants.WeatherData.City = jsonCityName
