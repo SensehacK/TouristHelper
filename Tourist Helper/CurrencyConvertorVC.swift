@@ -47,7 +47,7 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         // UI extension for gesture initializer for dismiss keyboard
         self.hideKeyboardWhenTappedAround()
         
-        NetworkCC.getCurrentCurrencyRates()
+      //   NetworkCC.getCurrentCurrencyRates()
         
         //Debug 
         print("NetworkCC.getCurrentCurrencyRates()")
@@ -92,8 +92,7 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         }
         */
         
-        /*
- 
+        
         // Set up URL 
         
         let currencyApiURL = URL(string : "http://api.fixer.io/latest")
@@ -142,7 +141,9 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         } // task ends
         
         task.resume()
-  */ // End commenting
+  
+        
+        // End commenting
         
         
         
@@ -204,23 +205,23 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         
         */
         
-        return currencyCountrySS.count
-        //return currencyCountry.count
+        //return currencyCountrySS.count
+        return currencyCountry.count
         //return currencyCountryCC.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         //print(currencyCountry[row])
         
-        return currencyCountrySS[row]
-        //return currencyCountry[row]
+       // return currencyCountrySS[row]
+        return currencyCountry[row]
        // return currencyCountryCC[row]
     }
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedCurrency = currencyRateSS[row]
-        //selectedCurrency = currencyRate[row]
+        //selectedCurrency = currencyRateSS[row]
+        selectedCurrency = currencyRate[row]
         //selectedCurrency = currencyRateCC[row]
     }
     
