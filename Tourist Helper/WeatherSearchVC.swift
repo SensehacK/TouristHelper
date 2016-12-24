@@ -163,7 +163,7 @@ class WeatherSearchVC: UIViewController , UITextFieldDelegate {
             } // if statement ends
             
             else {
-                
+                 DispatchQueue.main.async {
                 // Debug Prints
                 print(" in Success == false  else condition of NetworkTH.getWeatherDataByCity ")
                 
@@ -173,6 +173,8 @@ class WeatherSearchVC: UIViewController , UITextFieldDelegate {
                 self.cityNameTextField.text = ""
                 
                self.showAlert(title: "Error occured", message: "Couldn't get Weather Data by City")
+                    
+                }
             }// else statement ends
  
         }) // task completion handler ends
@@ -201,7 +203,7 @@ class WeatherSearchVC: UIViewController , UITextFieldDelegate {
             let replacementText = (currentText as NSString).replacingCharacters(in: range, with: string)
             
             // Validate
-            return replacementText.isValidDecimal(maximumFractionDigits: 2)
+            return replacementText.isValidDecimal(maximumFractionDigits: 3)
             
         }
         
@@ -332,7 +334,7 @@ class WeatherSearchVC: UIViewController , UITextFieldDelegate {
             } // if statement ends
                 
             else {
-                
+                 DispatchQueue.main.async {
                 // Debug Prints
                 print(" in Success == false  else condition of NetworkTH.getWeatherDataByLatLon ")
                 
@@ -345,6 +347,8 @@ class WeatherSearchVC: UIViewController , UITextFieldDelegate {
                 self.longitudeTextField.text = ""
                 
                 self.showAlert(title: "Error occured", message: "Couldn't get Weather Data by Lat Lon")
+                    
+                } // Dispatch Ends
             } // else statement ends
             
       
@@ -372,24 +376,16 @@ class WeatherSearchVC: UIViewController , UITextFieldDelegate {
     // IBActions Ends
     
     
-    // MARK: Show Alert Methods
     
-    func showAlert2(title : String , message: String) {
-        let alertDisplay = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let pressOK = UIAlertAction(title: "OK", style: .default){
-            _ in
-            self.dismiss(animated: true, completion: nil)
-        }
-        alertDisplay.addAction(pressOK)
-        present(alertDisplay, animated: true, completion: nil)
-    }
-
     
     
     
     
     
 }
+
+
+// Extensions from Stack Overflow 
 
 // Reference Stack OverFlow http://stackoverflow.com/a/27079103/5177704
 
@@ -407,6 +403,11 @@ extension UIViewController {
         view.endEditing(true)
     }
     
+    
+    
+    /* Code Review SUGGESTION
+    You can create an extension of UIViewController and put this method there and call it whenever you need it from any class that inherits from UIViewController. 
+     */
     
     // MARK: Show Alert Methods
     

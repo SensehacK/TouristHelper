@@ -56,7 +56,7 @@ class LocationWeatherVC: UIViewController {
         self.cityNameLabel.text =  self.CityCD.cityName
         self.smallCountryLabel.text =  self.CityCD.countryCode
         self.weatherDescription.text =  self.CityCD.weatherDescription
-        self.weatherTodayLabel.text =  self.CityCD.weatherToday
+        self.weatherTodayLabel.text =  self.CityCD.weatherDescription
         self.cloudinessValue.text =  self.CityCD.weatherToday
         
         self.latitudeValueLabel.text =  "\(self.CityCD.latitude)"

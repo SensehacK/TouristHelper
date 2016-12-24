@@ -12,6 +12,10 @@ import Foundation
 
 class CurrencyConvertorNetwork {
     
+    var currencyRate : [Double] = []
+    var currencyCountry :[String] = []
+    
+    
     func getCurrentCurrencyRates() {
         
         
@@ -47,8 +51,9 @@ class CurrencyConvertorNetwork {
                 if let currencyRates =  parsedData["rates"] as? NSDictionary {
                     
                     for (countries , rates) in currencyRates {
-                        OpenWeatherConstants.CurrencyConvertor.currencyCountry.append((countries as! String))
-                        OpenWeatherConstants.CurrencyConvertor.currencyRate.append((rates as! Double))
+                        self.currencyCountry.append((countries as! String))
+                        self.currencyRate.append((rates as! Double))
+
                     }
                     
                     

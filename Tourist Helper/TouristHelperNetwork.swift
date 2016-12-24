@@ -134,7 +134,7 @@ class TouristHelperNetwork {
             guard let jsonCityName = parsedOpenWeatherData["name"] as? String else {
                
                 print("error in guard Statement while getting Name")
-                return
+                return completionHandlerForWeatherDataByCity(false, "")
                 
             }
             // Debug Prints
@@ -498,7 +498,8 @@ class TouristHelperNetwork {
             guard let jsonCityName = parsedOpenWeatherData["name"] as? String else {
                 
                 print("error in guard Statement while getting Name")
-                return
+                
+                return completionHandlerForWeatherDataByLatLon(false, "")
                 
             }
             // Debug Prints

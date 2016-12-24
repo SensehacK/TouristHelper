@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataSource , NSFetchedResultsControllerDelegate {
+class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataSource,NSFetchedResultsControllerDelegate {
     
     
     
@@ -60,6 +60,7 @@ class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataS
         
         // Assign to the City CoreData & fetch objects.
         CityData = fetchedRequestContCity.fetchedObjects
+        weatherTableView.reloadData()
         
     }
     
@@ -183,5 +184,22 @@ class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataS
         present(alertDisplay, animated: true, completion: nil)
     }
      */
+    
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        if type == .insert
+        {
+            
+            DispatchQueue.main.async {
+                self.weatherTableView.reloadData()
+            }
+        }
+        if type == .update
+        {
+            DispatchQueue.main.async {
+                self.weatherTableView.reloadData()
+            }
+        }
+    }
 
 }
