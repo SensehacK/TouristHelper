@@ -11,6 +11,7 @@ import UIKit
 
 class LocationWeatherVC: UIViewController {
     
+    
     //MARK: IBOutlets
     
     @IBOutlet weak var cityNameLabel: UILabel!
@@ -73,11 +74,11 @@ class LocationWeatherVC: UIViewController {
         
     }
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     
     @IBAction func cancelButtonPressed(_ sender: AnyObject) {

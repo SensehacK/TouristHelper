@@ -13,7 +13,6 @@ import CoreData
 class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataSource,NSFetchedResultsControllerDelegate {
     
     
-    
     /*
      CoreDataStack.sharedInstance().saveContext()
      CoreDataStack.sharedInstance().persistentContainer.viewContext
