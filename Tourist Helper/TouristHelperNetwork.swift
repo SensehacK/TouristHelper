@@ -89,11 +89,13 @@ class TouristHelperNetwork {
                 print("Error in func getWeatherDataByCity Guard Statement")
                 return
             }
+            
             // Status code msgs
-            guard let statusCodes = (response as? HTTPURLResponse)?.statusCode , statusCodes >= 200 && statusCodes <= 299 else {
+            guard let statusCodes = (response as? HTTPURLResponse)?.statusCode , statusCodes >= 200 && statusCodes <= 600 else {
                 print("Wrong status codes returned func getWeatherDataByCity")
-                completionHandlerForWeatherDataByCity(false, "")
-                return
+               return completionHandlerForWeatherDataByCity(false, "")
+                
+               // return
             }
             
             
@@ -174,7 +176,7 @@ class TouristHelperNetwork {
             
             
             
-            // checking for Latitude & Longitude in "Coord"
+            // checking for Wind Array in "Coord"
             
             guard let jsonWind = parsedOpenWeatherData["wind"] as? NSDictionary else {
                 
@@ -183,7 +185,7 @@ class TouristHelperNetwork {
                 
             }
             
-            // JSON Co Ordingates Branch data Handling.
+            // JSON Wind  Branch data Handling.
             
             guard let jsonWindSpeed = jsonWind["speed"] as? Double else {
                 
@@ -195,25 +197,41 @@ class TouristHelperNetwork {
             OpenWeatherConstants.WeatherData.WindSpeed = jsonWindSpeed
             
             
-            // JSON Co Ordingates Branch data Handling.
-            //let jsonWindDegYes = 0.0
+            // JSON Wind Deg Branch data Handling.
             
-           /* if  jsonWind["deg"] {
-                
-                print("error in guard Statement while getting jsonWindDeg ")
-                
-            
-            } */
             
             let jsonWindDeg2 = jsonWind["deg"] as? Double
             print(jsonWindDeg2)
-            if (jsonWindDeg2?.isZero)! {
+            
+            if jsonWindDeg2 == nil {
                 print("In zero condition jsonWindDeg2?.isZero)! s")
+                print(jsonWindDeg2)
                 OpenWeatherConstants.WeatherData.WindDeg = jsonWindDeg2
+                
             }
             
             
             
+            
+            /*
+             
+             //let jsonWindDegYes = 0.0
+             
+              if  jsonWind["deg"] {
+             
+             print("error in guard Statement while getting jsonWindDeg ")
+             
+             
+             }
+             
+             let jsonWindDeg2 = jsonWind["deg"] as? Double
+             print(jsonWindDeg2)
+             if (jsonWindDeg2?.isZero)! {
+             print("In zero condition jsonWindDeg2?.isZero)! s")
+             OpenWeatherConstants.WeatherData.WindDeg = jsonWindDeg2
+             }
+
+             
             // JSON Co Ordingates Branch data Handling.
             
             guard let jsonWindDeg = jsonWind["deg"] as? Double else {
@@ -225,7 +243,7 @@ class TouristHelperNetwork {
             
             OpenWeatherConstants.WeatherData.WindDeg = jsonWindDeg
             
-            
+            */
             
             
             
@@ -435,10 +453,14 @@ class TouristHelperNetwork {
                 print("Error in func getWeatherDataByCity Guard Statement")
                 return
             }
+            
             // Status code msgs
-            guard let statusCodes = (response as? HTTPURLResponse)?.statusCode , statusCodes >= 200 && statusCodes <= 299 else {
-                print("Wrong status codes returned func getWeatherDataByCity")
-                return
+            guard let statusCodes = (response as? HTTPURLResponse)?.statusCode , statusCodes >= 200 && statusCodes <= 600 else {
+                print("Wrong status codes returned func getWeatherDataByLat Lon")
+                
+                return completionHandlerForWeatherDataByLatLon(false, "")
+                
+                //return
             }
             
             
@@ -539,16 +561,38 @@ class TouristHelperNetwork {
             OpenWeatherConstants.WeatherData.WindSpeed = jsonWindSpeed
             
             
-            // JSON Co Ordingates Branch data Handling.
+            let jsonWindDeg2 = jsonWind["deg"] as? Double
+            print(jsonWindDeg2)
             
-            guard let jsonWindDeg = jsonWind["deg"] as? Double else {
-                
-                print("error in guard Statement while getting jsonWindDeg ")
-                return
+            if jsonWindDeg2 == nil {
+                print("In zero condition jsonWindDeg2?.isZero)! s")
+                print(jsonWindDeg2)
+                OpenWeatherConstants.WeatherData.WindDeg = jsonWindDeg2
                 
             }
             
-            OpenWeatherConstants.WeatherData.WindDeg = jsonWindDeg
+            
+            
+            /*
+             
+             if (jsonWindDeg2?.isZero)! {
+             print("In zero condition jsonWindDeg2?.isZero)! s")
+             OpenWeatherConstants.WeatherData.WindDeg = jsonWindDeg2
+             }
+
+             
+             // JSON Co Ordingates Branch data Handling.
+             
+             guard let jsonWindDeg = jsonWind["deg"] as? Double else {
+             
+             print("error in guard Statement while getting jsonWindDeg ")
+             return
+             
+             }
+             
+             OpenWeatherConstants.WeatherData.WindDeg = jsonWindDeg
+             
+             */
             
             
             
@@ -564,13 +608,18 @@ class TouristHelperNetwork {
             
             // JSON Main Branch data Handling.
             
-            guard let jsonMainTemp = jsonMain["temp"] as? Double else {
+            guard var jsonMainTemp = jsonMain["temp"] as? Double else {
                 
                 print("error in guard Statement while getting Main Temp")
                 return
                 
             }
             
+            jsonMainTemp = jsonMainTemp/10
+            
+            //Debug Print
+            print("jsonMainTemp= jsonMainTemp/10 ")
+            print(jsonMainTemp)
             OpenWeatherConstants.WeatherData.Temperature = jsonMainTemp
             
             

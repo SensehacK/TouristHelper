@@ -11,7 +11,6 @@
 		FB4E99771E0AB39D007599CF /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4E99751E0AB39D007599CF /* City+CoreDataClass.swift */; };
 		FB4E99781E0AB39D007599CF /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4E99761E0AB39D007599CF /* City+CoreDataProperties.swift */; };
 		FB5303611E0960D2008A405D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5303601E0960D2008A405D /* AppDelegate.swift */; };
-		FB5303631E0960D2008A405D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5303621E0960D2008A405D /* ViewController.swift */; };
 		FB5303661E0960D2008A405D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB5303641E0960D2008A405D /* Main.storyboard */; };
 		FB5303691E0960D2008A405D /* Tourist_Helper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB5303671E0960D2008A405D /* Tourist_Helper.xcdatamodeld */; };
 		FB53036B1E0960D2008A405D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB53036A1E0960D2008A405D /* Assets.xcassets */; };
@@ -50,7 +49,6 @@
 		FB4E99761E0AB39D007599CF /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "City+CoreDataProperties.swift"; path = "../City+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FB53035D1E0960D2008A405D /* Tourist Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tourist Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5303601E0960D2008A405D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FB5303621E0960D2008A405D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FB5303651E0960D2008A405D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB5303681E0960D2008A405D /* Tourist_Helper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tourist_Helper.xcdatamodel; sourceTree = "<group>"; };
 		FB53036A1E0960D2008A405D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,7 +169,6 @@
 		FB53039B1E096339008A405D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FB5303621E0960D2008A405D /* ViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -345,7 +342,6 @@
 				FB5303961E0962B6008A405D /* OpenWeatherConstants.swift in Sources */,
 				FB5303A11E09728C008A405D /* LocationTableVC.swift in Sources */,
 				FB4E99781E0AB39D007599CF /* City+CoreDataProperties.swift in Sources */,
-				FB5303631E0960D2008A405D /* ViewController.swift in Sources */,
 				FB6EFCD01E0A4B2D00FCC8FE /* TouristHelperNetwork.swift in Sources */,
 				FB5303941E096296008A405D /* CurrencyConvertorVC.swift in Sources */,
 				FB5303691E0960D2008A405D /* Tourist_Helper.xcdatamodeld in Sources */,

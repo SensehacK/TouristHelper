@@ -170,6 +170,7 @@ class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataS
     
     
 
+    /*
     // MARK: Show Alert Methods
     
     func showAlert(title : String , message: String) {
@@ -181,6 +182,6 @@ class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataS
         alertDisplay.addAction(pressOK)
         present(alertDisplay, animated: true, completion: nil)
     }
-    
+     */
 
 }

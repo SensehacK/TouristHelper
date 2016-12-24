@@ -152,7 +152,7 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
     
     
     
-    
+    /*
     // MARK: Show Alert Methods
     
     func showAlert(title : String , message: String) {
@@ -165,6 +165,6 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         present(alertDisplay, animated: true, completion: nil)
     }
 
-    
+    */
     
 }

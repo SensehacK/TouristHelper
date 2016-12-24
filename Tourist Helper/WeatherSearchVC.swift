@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class WeatherSearchVC: UIViewController {
+class WeatherSearchVC: UIViewController , UITextFieldDelegate {
 
     
     /*
@@ -51,6 +51,10 @@ class WeatherSearchVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        latitudeTextField.delegate = self
+        longitudeTextField.delegate = self
+        
+        // Add keyboard hide gesture
         self.hideKeyboardWhenTappedAround()
         
         
@@ -74,6 +78,13 @@ class WeatherSearchVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+    {
+        let allowedCharacters = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
+    }
+    
     
     
     
@@ -90,13 +101,14 @@ class WeatherSearchVC: UIViewController {
         
         
         
+        
         if enterCityName.isEmpty {
             //Start Animation of Network Indicator
             nameActivityIndicator.isHidden = true
             nameActivityIndicator.stopAnimating()
             cityNameTextField.isEnabled = true
             
-            self.showAlert(title: "Empty Search Text Field", message: "Please enter a name to search")
+                showAlert(title: "Empty Search Text Field", message: "Please enter a name to search")
             
         }
         
@@ -117,7 +129,7 @@ class WeatherSearchVC: UIViewController {
         
         NetworkTH.getWeatherDataByCity(cityName: enterCityName, completionHandlerForWeatherDataByCity: { (success , error) in
             
-            if success == true {
+            if success {
                 DispatchQueue.main.async {
                     
                     
@@ -153,14 +165,14 @@ class WeatherSearchVC: UIViewController {
             else {
                 
                 // Debug Prints
-                print(" in Success == true  else condition of NetworkTH.getWeatherDataByCity ")
+                print(" in Success == false  else condition of NetworkTH.getWeatherDataByCity ")
                 
                 self.nameActivityIndicator.stopAnimating()
                 self.nameActivityIndicator.isHidden = true
                 self.cityNameTextField.isEnabled = true
                 self.cityNameTextField.text = ""
                 
-                self.showAlert(title: "Error occured", message: "Couldn't get Weather Data by City")
+               self.showAlert(title: "Error occured", message: "Couldn't get Weather Data by City")
             }// else statement ends
  
         }) // task completion handler ends
@@ -170,8 +182,7 @@ class WeatherSearchVC: UIViewController {
     
     
     @IBAction func searchByLatLonButtonPressed(_ sender: AnyObject) {
-        let tempLat = latitudeTextField.text
-        let tempLon = longitudeTextField.text
+       
         
         
         //Start Animation of Network Indicator
@@ -182,33 +193,114 @@ class WeatherSearchVC: UIViewController {
         latitudeTextField.isEnabled = false
         longitudeTextField.isEnabled = false
         
-        if (tempLon?.isEmpty)! {
-            print(tempLon)
-            print("is Empty")
-        }
-        if (tempLat?.isEmpty)! || (tempLon?.isEmpty)! {
+        
+        func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
             
-            //Start Animation of Network Indicator
-            latLonActivityIndicator.isHidden = true
+            // Get text
+            let currentText = textField.text ?? ""
+            let replacementText = (currentText as NSString).replacingCharacters(in: range, with: string)
+            
+            // Validate
+            return replacementText.isValidDecimal(maximumFractionDigits: 2)
+            
+        }
+        
+        
+        /*
+         
+         let tempLat = latitudeTextField.text
+         let tempLon = longitudeTextField.text
+         
+        if (latitudeTextField.text?.isEmpty)! {
+            print("(latitudeTextField.text?.isEmpty)!")
+        }
+        
+        if latitudeTextField.text == "" ||  longitudeTextField.text == "" {
+            
+            // Debug Prints 
+            print("(latitudeTextField.text ==  ||  longitudeTextField.text == )")
+            
+            showAlert(title: "Empty Lat or Lon Text Field", message: "Please enter a Latitude to search")
             latLonActivityIndicator.stopAnimating()
-            print(tempLon)
-            print("is Empty")
-            print(tempLat)
-            print("is Empty")
+            latLonActivityIndicator.isHidden = true
             
             //text fields enabled
             latitudeTextField.isEnabled = true
             longitudeTextField.isEnabled = true
-            self.showAlert(title: "Empty Lat or Lon Text Field", message: "Please enter a Latitude to search")
+            
+         
+        }
+         
+         /*
+         
+         
+         if (tempLon?.isEmpty)! {
+         print(tempLon)
+         print("is Empty")
+         }
+         
+         
+         
+         if (tempLat?.isEmpty)! || (tempLon?.isEmpty)! {
+         
+         //Start Animation of Network Indicator
+         latLonActivityIndicator.isHidden = true
+         latLonActivityIndicator.stopAnimating()
+         print(tempLon)
+         print("is Empty")
+         print(tempLat)
+         print("is Empty")
+         
+         //text fields enabled
+         latitudeTextField.isEnabled = true
+         longitudeTextField.isEnabled = true
+         self.showAlert(title: "Empty Lat or Lon Text Field", message: "Please enter a Latitude to search")
+         }
+         
+         let enterLatitude = Double(tempLat!)
+         let enterLongitude = Double(tempLon!)
+         
+         */
+         
+         
+ */
+        
+        
+        guard let latText = latitudeTextField.text, !latText.isEmpty else {
+            
+            // Debug Prints 
+            print("guard let latText = latitudeTextField.text")
+            
+            showAlert(title: "Empty Lat or Lon Text Field", message: "Please enter a Latitude to search")
+            latLonActivityIndicator.stopAnimating()
+            latLonActivityIndicator.isHidden = true
+            
+            //text fields enabled
+            latitudeTextField.isEnabled = true
+            longitudeTextField.isEnabled = true
+            return
         }
         
-        let enterLatitude = Double(tempLat!)
-        let enterLongitude = Double(tempLon!)
+        guard let lonText = longitudeTextField.text, !lonText.isEmpty else {
+            // Debug Prints
+            print("guard let latText = latitudeTextField.text")
+            
+            showAlert(title: "Empty Lat or Lon Text Field", message: "Please enter a Latitude to search")
+            latLonActivityIndicator.stopAnimating()
+            latLonActivityIndicator.isHidden = true
+            
+            //text fields enabled
+            latitudeTextField.isEnabled = true
+            longitudeTextField.isEnabled = true
+            
+            return
+        }
         
-        /*
+     
+        
         let enterLatitude = Double(latitudeTextField.text!)
         let enterLongitude = Double(longitudeTextField.text!)
-        */
+        
     
         
        
@@ -216,7 +308,7 @@ class WeatherSearchVC: UIViewController {
         
         NetworkTH.getWeatherDataByLatLon(latitudeWeather: enterLatitude!, longitudeWeather: enterLongitude!, completionHandlerForWeatherDataByLatLon: { (success , error) in
             
-            if success == true {
+            if success {
                 DispatchQueue.main.async {
                     
                     
@@ -240,6 +332,10 @@ class WeatherSearchVC: UIViewController {
             } // if statement ends
                 
             else {
+                
+                // Debug Prints
+                print(" in Success == false  else condition of NetworkTH.getWeatherDataByLatLon ")
+                
                 self.latLonActivityIndicator.stopAnimating()
                 self.latLonActivityIndicator.isHidden = true
                 self.latitudeTextField.isEnabled = true
@@ -278,7 +374,7 @@ class WeatherSearchVC: UIViewController {
     
     // MARK: Show Alert Methods
     
-    func showAlert(title : String , message: String) {
+    func showAlert2(title : String , message: String) {
         let alertDisplay = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let pressOK = UIAlertAction(title: "OK", style: .default){
             _ in
@@ -310,4 +406,54 @@ extension UIViewController {
     func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    
+    // MARK: Show Alert Methods
+    
+    func showAlert(title : String , message: String) {
+        let alertDisplay = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let pressOK = UIAlertAction(title: "OK", style: .default){
+            _ in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alertDisplay.addAction(pressOK)
+        present(alertDisplay, animated: true, completion: nil)
+    }
 }
+
+// Reference from Stack Overflow http://stackoverflow.com/a/39811155/5177704 
+
+
+extension String{
+    
+    private static let decimalFormatter:NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.allowsFloats = true
+        return formatter
+    }()
+    
+    private var decimalSeparator:String{
+        return String.decimalFormatter.decimalSeparator ?? "."
+    }
+    
+    func isValidDecimal(maximumFractionDigits:Int)->Bool{
+        
+        // Depends on you if you consider empty string as valid number
+        guard self.isEmpty == false else {
+            return true
+        }
+        
+        // Check if valid decimal
+        if let _ = String.decimalFormatter.number(from: self){
+            
+            // Get fraction digits part using separator
+            let numberComponents = self.components(separatedBy: decimalSeparator)
+            let fractionDigits = numberComponents.count == 2 ? numberComponents.last ?? "" : ""
+            return fractionDigits.characters.count <= maximumFractionDigits
+        }
+        
+        return false
+    }
+    
+}
+

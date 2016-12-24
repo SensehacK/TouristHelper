@@ -38,7 +38,7 @@ struct OpenWeatherConstants {
     static let APIPath = "/data/2.5/weather"
     static let QueryCity = "?q="
     static let QueryLat = "?lat="
-    static let QueryLon = "?lon="
+    static let QueryLon = "&lon="
     static let QueryAPI = "&APPID="
     static let AppID = "b25ecd39a0f08f16aed86d6ffaafc964"
     
