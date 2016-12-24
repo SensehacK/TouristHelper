@@ -14,10 +14,12 @@ class CurrencyConvertorNetwork {
     
     var currencyRate : [Double] = []
     var currencyCountry :[String] = []
+    var success = true
     
-    
+
     func getCurrentCurrencyRates() {
         
+     
         
         let currencyApiURL = URL(string : "\(OpenWeatherConstants.CurrencyConvertor.currencyRate)" )
        // let currencyApiURL = URL(string : "http://api.fixer.io/latest")
@@ -55,14 +57,18 @@ class CurrencyConvertorNetwork {
                         self.currencyRate.append((rates as! Double))
                         
                     }
+                    self.success = true
                     
                     
                 }
                 
                 
+                
             } catch
             {
+                self.success = false
                 print("Error found in JSON Parsing")
+                
             }
             
             

@@ -11,9 +11,10 @@ import UIKit
 
 class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource {
     
+    let NetworkCC = CurrencyConvertorNetwork()
     
-    var currencyRate : [Double] = []
-    var currencyCountry :[String] = []
+    var currencyRateCC : [Double] = []
+    var currencyCountryCC :[String] = []
     
     var selectedCurrency : Double = 0
     var convertedAmount : Double = 0
@@ -36,6 +37,31 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         // UI extension for gesture initializer for dismiss keyboard
         self.hideKeyboardWhenTappedAround()
         
+        NetworkCC.getCurrentCurrencyRates()
+        //Debug 
+        print("NetworkCC.getCurrentCurrencyRates()")
+        
+        /*
+        let bool2 : Bool =  NetworkCC.checkEmail()
+        
+       let bool =  NetworkCC.getCurrentCurrencyRates()
+        
+        */
+        let bool =  NetworkCC.success
+        
+        if bool {
+            //Debug
+            print("if bool {")
+
+           currencyRateCC = NetworkCC.currencyRate
+          currencyCountryCC =   NetworkCC.currencyCountry
+        }
+        else {
+            
+            print("Error Displayed " )
+        }
+        
+        /*
         // Set up URL 
         
         let currencyApiURL = URL(string : "http://api.fixer.io/latest")
@@ -77,11 +103,17 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
                 print("Error found in JSON Parsing")
             }
             
-            
+ 
+        
+        
             self.currencyCountryPicker.reloadAllComponents()
         } // task ends
         
         task.resume()
+ */
+        
+        
+        
     }// view did load ends
     
     
@@ -120,9 +152,10 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         print("variable currencycountry.count ")
-        print(currencyCountry.count)
+        print(currencyCountryCC.count)
         //DEbug print''
         
+        /*
         let tempNumberOfRows = OpenWeatherConstants.CurrencyConvertor.currencyCountry.count
         //DEbug print''
         print("variable tempNumberOfRows ")
@@ -132,19 +165,20 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         print("variable  OpenWeatherConstants.CurrencyConvertor.currencyCountry.count ")
         print((OpenWeatherConstants.CurrencyConvertor.currencyCountry.count))
         
+        */
         
-        return currencyCountry.count
+        return currencyCountryCC.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         //print(currencyCountry[row])
         
-        return currencyCountry[row]
+        return currencyCountryCC[row]
     }
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedCurrency = currencyRate[row]
+        selectedCurrency = currencyRateCC[row]
     }
     
     
