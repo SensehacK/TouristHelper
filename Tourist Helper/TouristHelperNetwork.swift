@@ -169,9 +169,9 @@ class TouristHelperNetwork {
                 return
                 
             }
+            print(jsonCoordLan)
             
             OpenWeatherConstants.WeatherData.Latitude = jsonCoordLan
-            
             
             
             // checking for Wind Array in "Coord"
