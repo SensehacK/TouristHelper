@@ -123,9 +123,8 @@
 				FB53039F1E09637A008A405D /* Extras */,
 				FB53039E1E096362008A405D /* Controller */,
 				FB53039A1E09631C008A405D /* Currency */,
-				FB53039D1E09635E008A405D /* Model */,
-				FB53039B1E096339008A405D /* View */,
 				FB5303991E096311008A405D /* Weather */,
+				FB53039D1E09635E008A405D /* Model */,
 			);
 			path = "Tourist Helper";
 			sourceTree = "<group>";
@@ -164,13 +163,6 @@
 				FB5303931E096296008A405D /* CurrencyConvertorVC.swift */,
 			);
 			name = Currency;
-			sourceTree = "<group>";
-		};
-		FB53039B1E096339008A405D /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 		FB53039D1E09635E008A405D /* Model */ = {
