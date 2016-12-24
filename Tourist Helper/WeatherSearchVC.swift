@@ -55,7 +55,7 @@ class WeatherSearchVC: UIViewController , UITextFieldDelegate {
         longitudeTextField.delegate = self
         
         // Add keyboard hide gesture
-        self.hideKeyboardWhenTappedAround()
+        hideKeyboardWhenTappedAround()
         
         
         //City search
@@ -98,8 +98,7 @@ class WeatherSearchVC: UIViewController , UITextFieldDelegate {
         
         nameActivityIndicator.startAnimating()
         cityNameTextField.isEnabled = false
-        
-        
+    
         
         if enterCityName.isEmpty {
             
@@ -113,16 +112,10 @@ class WeatherSearchVC: UIViewController , UITextFieldDelegate {
         }
         
         
-    
-        
-        
-        
         NetworkTH.getWeatherDataByCity(cityName: enterCityName, completionHandlerForWeatherDataByCity: { (success , error) in
             
             if success {
                 DispatchQueue.main.async {
-                    
-                    
                     
                     self.nameActivityIndicator.startAnimating()
                      UIApplication.shared.isNetworkActivityIndicatorVisible = true

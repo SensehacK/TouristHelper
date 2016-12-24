@@ -72,9 +72,9 @@ class TouristHelperNetwork {
             guard let data = data else {
                 print("Data not present,")
                 //Debug print
-                print("Error in func getWeatherDataByCity Guard Statement")
-                
-                return
+                print("Error in func getWeatherDataByCity data not present Guard Statement")
+            
+                return completionHandlerForWeatherDataByCity(false, "\(error!.localizedDescription)")
             }
             
             guard error == nil else {
@@ -392,10 +392,11 @@ class TouristHelperNetwork {
             guard let data = data else {
                 print("Data not present,")
                 //Debug print
-                print("Error in func getWeatherDataByLatLon Guard Statement")
+                print("Error in func getWeatherDataByLatLon data not present Guard Statement")
                 
-                return
+                return completionHandlerForWeatherDataByLatLon(false, "\(error!.localizedDescription)")
             }
+
             
             guard error == nil else {
                 print("error present")

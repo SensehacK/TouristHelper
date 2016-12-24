@@ -65,6 +65,7 @@ class LocationTableVC : UIViewController , UITableViewDelegate, UITableViewDataS
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         //Reloads Data
         fetchedRequestCity.sortDescriptors = [NSSortDescriptor(key : "cityName" , ascending : true)]
         

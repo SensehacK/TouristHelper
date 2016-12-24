@@ -11,13 +11,11 @@ import UIKit
 
 class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource {
     
+    //Instance class object
     let NetworkCC = CurrencyConvertorNetwork()
-    
-    
     
     var selectedCurrency : Double = 0
     var convertedAmount : Double = 0
-    
     
     // Old variables 
     var currencyRate : [Double] = []
@@ -44,11 +42,8 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         // Do any additional setup after loading the view, typically from a nib.
         
         // UI extension for gesture initializer for dismiss keyboard
-        self.hideKeyboardWhenTappedAround()
+        hideKeyboardWhenTappedAround()
         
-      //   NetworkCC.getCurrentCurrencyRates()
-    
-            
             NetworkCC.getCurrencyArray(completionHandler: {(success , error) in
             
             if success {
@@ -66,74 +61,16 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
             
             self.currencyCountryPicker.reloadAllComponents()
             })
-            
-            
-            
+        
             
         //Debug
         print("NetworkCC.getCurrentCurrencyRates()")
-        
-       
-        /*
-        // Set up URL 
-        
-        let currencyApiURL = URL(string : "http://api.fixer.io/latest")
-        
-        // Initialise the Task 
-        
-        let task = URLSession.shared.dataTask(with: currencyApiURL!) { (data , response , error) in
-            
-            guard error == nil else {
-                self.showAlert(title: "Error", message: "Error Found while connecting with internet")
-                return
-            }
-            
-            
-            guard let dataJson = data else {
-                self.showAlert(title: "Data error", message: "Please check your Internet Connection")
-                return
-            }
-            
-            // JSON Parsing
-            
-            let parsedData : AnyObject!
-            
-            do {
-            parsedData = try JSONSerialization.jsonObject(with: dataJson, options: .allowFragments) as AnyObject
-                if let currencyRates =  parsedData["rates"] as? NSDictionary {
-                    
-                    for (countries , rates) in currencyRates {
-                        self.currencyCountry.append((countries as! String))
-                        self.currencyRate.append((rates as! Double))
-                    }
-                    
-                    
-                }
-                
-                
-            } catch
-            {
-                print("Error found in JSON Parsing")
-            }
-            
- 
-        
-        
-            self.currencyCountryPicker.reloadAllComponents()
-        } // task ends
-        
-        task.resume()
-  
-        
-     */   // End commenting
-        
+    
         
         
     }// view did load ends
          
  
-    
-    
     // MARK: IBAction
     
     
@@ -148,16 +85,12 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
             
             showAlert(title: "Empty UIPickerView", message: "Please select Currency Country from PickerView")
         }
-        
-        
-        //let currency
-        //guard let  selectedCurrency
+    
         
         print("selectedCurrency")
         print(selectedCurrency)
         
         convertedAmount = Double(amountToBeConvertedTextField.text!)! * selectedCurrency
-        
         
         //Change the label
         convertedAmountLabel.text = String(convertedAmount)
@@ -172,22 +105,15 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
     
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
-       // print("variable currencycountrySS.count ")
-        //print(currencyCountrySS.count)
-        
+       
         
         return currencyCountrySS.count
-        //return currencyCountry.count
-        //return currencyCountryCC.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        //print(currencyCountry[row])
-        
+
        return currencyCountrySS[row]
-      //  return currencyCountry[row]
-       // return currencyCountryCC[row]
+
     }
     
     
@@ -197,8 +123,6 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         print(currencyRateSS[row])
         
         selectedCurrency = currencyRateSS[row]
-        //selectedCurrency = currencyRate[row]
-        //selectedCurrency = currencyRateCC[row]
     }
     
     
