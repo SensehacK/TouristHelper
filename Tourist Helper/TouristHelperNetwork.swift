@@ -11,12 +11,6 @@ import CoreData
 
 class TouristHelperNetwork {
     
-    
-    
-    
-    
-    // URL for reference  http:// openweathermap.org/data/2.5/weather?q=vasai&APPID=b25ecd39a0f08f16aed86d6ffaafc964
-    
     //MARK: INCOMPLETE
     // Weather Data Method by parameter "City"
     
@@ -27,7 +21,7 @@ class TouristHelperNetwork {
         var optionalCity = ""
         
         // Reference http://stackoverflow.com/questions/24879659/how-to-encode-a-url-in-swift
-        //var escapedAddress = cityName.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        
         
         let escapedCityName  = cityName.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
         
@@ -88,10 +82,10 @@ class TouristHelperNetwork {
                 //Debug print
                 print("Error in func getWeatherDataByCity Guard Statement")
                 
-                let error = error?.localizedDescription
+               // let error2 = error?.localizedDescription
                 
                 
-                return completionHandlerForWeatherDataByCity(false, "\(error)")
+                return completionHandlerForWeatherDataByCity(false, "\(error!.localizedDescription)")
             }
             
             // Status code msgs
@@ -214,40 +208,6 @@ class TouristHelperNetwork {
                 
             }
             
-            
-            
-            
-            /*
-             
-             //let jsonWindDegYes = 0.0
-             
-              if  jsonWind["deg"] {
-             
-             print("error in guard Statement while getting jsonWindDeg ")
-             
-             
-             }
-             
-             let jsonWindDeg2 = jsonWind["deg"] as? Double
-             print(jsonWindDeg2)
-             if (jsonWindDeg2?.isZero)! {
-             print("In zero condition jsonWindDeg2?.isZero)! s")
-             OpenWeatherConstants.WeatherData.WindDeg = jsonWindDeg2
-             }
-
-             
-            // JSON Co Ordingates Branch data Handling.
-            
-            guard let jsonWindDeg = jsonWind["deg"] as? Double else {
-                
-                print("error in guard Statement while getting jsonWindDeg ")
-                return
-                
-            }
-            
-            OpenWeatherConstants.WeatherData.WindDeg = jsonWindDeg
-            
-            */
             
             
             
@@ -390,28 +350,14 @@ class TouristHelperNetwork {
     
     
     
-    /* URL API Constants
-    static let APIScheme = "http"
-    static let APIHost = "api.openweathermap.org"
-    static let APIPath = "/data/2.5/weather"
-    static let QueryCity = "?q="
-    static let QueryLat = "?lat="
-    static let QueryLon = "&lon="
-    static let QueryAPI = "&APPID="
-    static let AppID = "b25ecd39a0f08f16aed86d6ffaafc964"
-    
-    // URL for reference http:// api.openweathermap.org/data/2.5/weather?lat=22&lon=122&APPID=b25ecd39a0f08f16aed86d6ffaafc964
+    /*
 
-      //MARK: INCOMPLETE Weather Data Method by parameter "Latitude" & "Longitude"
+      //MARK: Complete Weather Data Method by parameter "Latitude" & "Longitude"
      
-     // Mumbai URL 
-     
-     
+     // Mumbai URL
      http:// api.openweathermap.org/data/2.5/weather?lat=19.01&lon=72.85&APPID=b25ecd39a0f08f16aed86d6ffaafc964
     */
     
-    
-
     // Weather Data Method by parameter "Latitude" & "Longitude"
     
     func getWeatherDataByLatLon(latitudeWeather : Double, longitudeWeather : Double, completionHandlerForWeatherDataByLatLon : @escaping (_ success : Bool , _ error : String)-> Void) {
@@ -446,7 +392,7 @@ class TouristHelperNetwork {
             guard let data = data else {
                 print("Data not present,")
                 //Debug print
-                print("Error in func getWeatherDataByCity Guard Statement")
+                print("Error in func getWeatherDataByLatLon Guard Statement")
                 
                 return
             }
@@ -454,8 +400,8 @@ class TouristHelperNetwork {
             guard error == nil else {
                 print("error present")
                 //Debug print
-                print("Error in func getWeatherDataByCity Guard Statement")
-                return
+                print("Error in func getWeatherDataByLatLon Guard Statement")
+                return completionHandlerForWeatherDataByLatLon(false, "\(error!.localizedDescription)")
             }
             
             // Status code msgs
@@ -478,21 +424,9 @@ class TouristHelperNetwork {
                 parsedOpenWeatherData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSDictionary
             }
             catch {
-                print("Error in Do try catch block func getWeatherDataByCity")
+                print("Error in Do try catch block func getWeatherDataByLatLon")
                 return
             }
-            
-            // Reference Response
-            /*
-             
-             openweathermap.org/data/2.5/weather?q=vasai&APPID=b25ecd39a0f08f16aed86d6ffaafc964
-             
-             
-             Normal JSON Response
-             
-             {"coord":{"lon":72.8,"lat":19.47},"weather":[{"id":711,"main":"Smoke","description":"smoke","icon":"50d"}],"base":"stations","main":{"temp":305.15,"pressure":1017,"humidity":38,"temp_min":305.15,"temp_max":305.15},"visibility":5000,"wind":{"speed":4.1,"deg":90},"clouds":{"all":0},"dt":1482296400,"sys":{"type":1,"id":7770,"message":0.0097,"country":"IN","sunrise":1482284303,"sunset":1482323752},"id":1253372,"name":"Vasai","cod":200}
-             
-             */
             
             
             
@@ -575,31 +509,6 @@ class TouristHelperNetwork {
                 OpenWeatherConstants.WeatherData.WindDeg = jsonWindDeg2
                 
             }
-            
-            
-            
-            /*
-             
-             if (jsonWindDeg2?.isZero)! {
-             print("In zero condition jsonWindDeg2?.isZero)! s")
-             OpenWeatherConstants.WeatherData.WindDeg = jsonWindDeg2
-             }
-
-             
-             // JSON Co Ordingates Branch data Handling.
-             
-             guard let jsonWindDeg = jsonWind["deg"] as? Double else {
-             
-             print("error in guard Statement while getting jsonWindDeg ")
-             return
-             
-             }
-             
-             OpenWeatherConstants.WeatherData.WindDeg = jsonWindDeg
-             
-             */
-            
-            
             
             
             // Check for Main Array while parsing data. 
@@ -760,6 +669,7 @@ class TouristHelperNetwork {
         CoreDataStack.sharedInstance().saveContext()
         
         }
+        
         // Debug Prints
         print("func saveDataToCoreData(city: String)")
         
@@ -779,34 +689,6 @@ class TouristHelperNetwork {
         
         // Debug Prints
         print("func saveDataToCoreData(city: String) after  catch block")
-        
-        
-        
-        
-        
-        /* Directly save the city name
-        
-         let cityObject : City!
-         cityObject.cityName  = OpenWeatherConstants.WeatherData.City
-         
-        let CityCD  : [City]!
-        let fetchedRequestCity2: NSFetchRequest<City> = City.fetchRequest()
-        do {
-            CityCD =   try CoreDataStack.sharedInstance().persistentContainer.viewContext.fetch(fetchedRequestCity2)
-            
-            
-        }catch {
-            
-        }
-        
-        CityCD.cityName = OpenWeatherConstants.WeatherData.City
-        
-         */
-
-        
-        
-        
-        
         
         // Parsing core Data object
         for object in coreData
@@ -841,10 +723,7 @@ class TouristHelperNetwork {
     } // func ends 
     
 
+    // URL for reference  http:// openweathermap.org/data/2.5/weather?q=vasai&APPID=b25ecd39a0f08f16aed86d6ffaafc964
 
-    
-    
-    
-    
     
 } // end

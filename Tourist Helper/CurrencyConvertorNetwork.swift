@@ -14,93 +14,7 @@ class CurrencyConvertorNetwork {
     var currencyRate : [Double] = []
     var currencyCountry :[String] = []
     var success = true
-    
-/*
-    func getCurrentCurrencyRates() {
-        
-     
-        /*
-         if let url = OpenWeatherConstants.CurrencyConvertor.ApiFixerIO {
-            print("let url = OpenWeatherConstants.")
-        }
-         */
-        let currencyApiURL = URL(string : "http://api.fixer.io/latest" )
-       // let currencyApiURL = URL(string : "http://api.fixer.io/latest")
-        
-        //Debug prints
-        print("currencyApiURL")
-        print(currencyApiURL)
-        
-        // Initialise the Task
-        
-        let task = URLSession.shared.dataTask(with: currencyApiURL!) { (data , response , error) in
-            
-            //Debug prints
-            print("URLSession.shared")
 
-            
-            guard error == nil else {
-                //self.showAlert(title: "Error", message: "Error Found while connecting with internet")
-                
-                return
-            }
-            
-            
-            guard let dataJson = data else {
-                //self.showAlert(title: "Data error", message: "Please check your Internet Connection")
-                
-                return
-            }
-            
-            // JSON Parsing
-            
-            let parsedData : AnyObject!
-            
-            do {
-                //Debug prints
-                print("parsedData : AnyObject!do {")
-                
-                parsedData = try JSONSerialization.jsonObject(with: dataJson, options: .allowFragments) as AnyObject
-                
-                if let currencyRates =  parsedData["rates"] as? NSDictionary {
-                    
-                    for (countries , rates) in currencyRates {
-                        self.currencyCountry.append((countries as! String))
-                        self.currencyRate.append((rates as! Double))
-                        /*
-                        OpenWeatherConstants.CurrencyConvertor.currencyCountry.append((countries as! String))
-                        OpenWeatherConstants.CurrencyConvertor.currencyRate.append((rates as! Double))
-                        */
-                        
-                        
-                    }
-                    self.success = true
-        
-                }
-                //Debug prints
-                print("parsedData :Call  self.assignArray() {")
-                 self.assignArray()
-                
-            } catch
-            {
-                self.success = false
-                
-                //OpenWeatherConstants.CurrencyConvertor.isSuccess = false
-                
-                print("Error found in JSON Parsing")
-                
-            }
-            
-            
-            
-    }
-    
-    task.resume()
-}
-    */
-    
-    
-    
     
     func getCurrencyArray( completionHandler : @escaping (_ success : Bool , _ error : String) -> Void )
     {
@@ -176,10 +90,10 @@ class CurrencyConvertorNetwork {
         otherVC.currencyRateSS = currencyRate
     }
     
+     
     func specificCurrencyRate() {
         
     }
-    
     
     func showAlert(title : String , message: String) {
         let alertDisplay = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -190,6 +104,7 @@ class CurrencyConvertorNetwork {
         alertDisplay.addAction(pressOK)
         present(alertDisplay, animated: true, completion: nil)
     }
+     
     */
     
     
