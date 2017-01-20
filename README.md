@@ -2,7 +2,7 @@
 
 Introduction :
 	Tourist Helper is iOS Single View application designed to aid users for getting a certain city's weather & atmospheric conditions including Humidity , Wind speed & Pressure etc.
-	Tourist Helper also helps the Tourist in terms of latest Currency conversion rates accross the World. Default Exchange rate is set to US Dollars. 
+	Tourist Helper also helps the Tourist in terms of latest Currency conversion rates across the World. Default Exchange rate is set to US Dollars. 
 
 Usage :
 	Through a Slider Picker , user can choose the country of desired currency rate for conversion.
