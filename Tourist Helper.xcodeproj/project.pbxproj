@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43B6DB8A20356286000D7915 /* Launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B6DB8920356286000D7915 /* Launch.png */; };
 		FB41C03A1E0D8F0800B5F80F /* CurrencyConvertorNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB41C0391E0D8F0800B5F80F /* CurrencyConvertorNetwork.swift */; };
 		FB4E99771E0AB39D007599CF /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4E99751E0AB39D007599CF /* City+CoreDataClass.swift */; };
 		FB4E99781E0AB39D007599CF /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4E99761E0AB39D007599CF /* City+CoreDataProperties.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43B6DB8920356286000D7915 /* Launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch.png; sourceTree = "<group>"; };
 		FB41C0391E0D8F0800B5F80F /* CurrencyConvertorNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyConvertorNetwork.swift; sourceTree = "<group>"; };
 		FB4E99751E0AB39D007599CF /* City+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "City+CoreDataClass.swift"; path = "../City+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FB4E99761E0AB39D007599CF /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "City+CoreDataProperties.swift"; path = "../City+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		FB53039F1E09637A008A405D /* Extras */ = {
 			isa = PBXGroup;
 			children = (
+				43B6DB8920356286000D7915 /* Launch.png */,
 				FB53036A1E0960D2008A405D /* Assets.xcassets */,
 				FB53036C1E0960D2008A405D /* LaunchScreen.storyboard */,
 				FB53036F1E0960D2008A405D /* Info.plist */,
@@ -302,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43B6DB8A20356286000D7915 /* Launch.png in Resources */,
 				FB53036E1E0960D2008A405D /* LaunchScreen.storyboard in Resources */,
 				FB53036B1E0960D2008A405D /* Assets.xcassets in Resources */,
 				FB5303661E0960D2008A405D /* Main.storyboard in Resources */,
