@@ -374,7 +374,7 @@ extension String{
             // Get fraction digits part using separator
             let numberComponents = self.components(separatedBy: decimalSeparator)
             let fractionDigits = numberComponents.count == 2 ? numberComponents.last ?? "" : ""
-            return fractionDigits.characters.count <= maximumFractionDigits
+            return fractionDigits.count <= maximumFractionDigits
         }
         
         return false
