@@ -154,8 +154,9 @@ class WeatherSearchVC: UIViewController , UITextFieldDelegate {
                     
                 }
             }// else statement ends
-            
+            DispatchQueue.main.async {
              self.nameActivityIndicator.stopAnimating()
+            }
         }) // task completion handler ends
         
         
