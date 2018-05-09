@@ -8,6 +8,12 @@
 
 import UIKit
 import CoreData
+//Visual Studio App Center Integration
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
+//Visual Studio Notification Integration
+import AppCenterPush
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //Calling Visual Studio App Center Analytics tracker
+        MSAppCenter.start("854867ea-46e4-49f0-8a46-d5acb17c2eef", withServices:[ MSAnalytics.self, MSCrashes.self ])
+        //Calling Visual Studio App Center Push tracker
+        MSAppCenter.start("{854867ea-46e4-49f0-8a46-d5acb17c2eef}", withServices: [MSPush.self])
         return true
     }
 

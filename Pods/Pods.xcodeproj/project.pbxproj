@@ -39,7 +39,6 @@
 		0CA0B96E5C838D5159F9DB7BE0640ED7 /* Pods-Tourist HelperUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tourist HelperUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		16BBF3578E985351C0005D4CA38F635F /* Pods-Tourist Helper-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tourist Helper-resources.sh"; sourceTree = "<group>"; };
 		1F2EE36879413FA5AE9AECB039A5022E /* Pods_Tourist_Helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Tourist_Helper.framework; path = "Pods-Tourist Helper.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		275DEAAB07AB38756C25FF9F36046103 /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = "AppCenter-SDK-Apple/iOS/AppCenter.framework"; sourceTree = "<group>"; };
 		287D87C53C9450C5BC6C2C93EC46B979 /* Pods-Tourist HelperUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tourist HelperUITests-resources.sh"; sourceTree = "<group>"; };
 		33FC71CB17E399B5A5FF261E02DA924E /* Pods-Tourist Helper-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tourist Helper-frameworks.sh"; sourceTree = "<group>"; };
 		351492AAA2036FB9D1DD1CC656DD3112 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,7 +47,7 @@
 		41DC0401E99C18FA8EB064FBFB87D327 /* Pods-Tourist HelperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tourist HelperTests.release.xcconfig"; sourceTree = "<group>"; };
 		459067B46A8FF1CD665E72124629C921 /* Pods-Tourist HelperTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tourist HelperTests-dummy.m"; sourceTree = "<group>"; };
 		4F61308D69DC7811EB6250D24E2AB677 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5351CBD2DE9358535B624F45830298EA /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = "AppCenter-SDK-Apple/iOS/AppCenterAnalytics.framework"; sourceTree = "<group>"; };
+		53A158CE3C0C4CE842F9F8C142DB9821 /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = "AppCenter-SDK-Apple/iOS/AppCenterCrashes.framework"; sourceTree = "<group>"; };
 		5BA4B8AC979F04BA380AB2FAC13A538D /* Pods_Tourist_HelperUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Tourist_HelperUITests.framework; path = "Pods-Tourist HelperUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		612EEB418D79AE85206C12932DB16CFD /* Pods-Tourist Helper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tourist Helper-dummy.m"; sourceTree = "<group>"; };
 		64945249D447BC6B636268AE2479C94E /* Pods-Tourist HelperTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tourist HelperTests-resources.sh"; sourceTree = "<group>"; };
@@ -58,16 +57,18 @@
 		7D2C0751DF51B3D8DCEFB2083E5287CC /* Pods-Tourist HelperTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Tourist HelperTests.modulemap"; sourceTree = "<group>"; };
 		83D678174C14775B7439CC9372AC72F6 /* Pods-Tourist Helper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tourist Helper-umbrella.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9454C46A42EE2F6A8F78EBBD99E6347B /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = "AppCenter-SDK-Apple/iOS/AppCenter.framework"; sourceTree = "<group>"; };
 		998FC0919105A3EA91314F2649590204 /* Pods-Tourist HelperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tourist HelperUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9CA32B6249EC662B88DB09732B49D76E /* Pods-Tourist HelperUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tourist HelperUITests-umbrella.h"; sourceTree = "<group>"; };
 		B1943B64035A059220F17AC7D8189543 /* Pods-Tourist HelperTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tourist HelperTests-frameworks.sh"; sourceTree = "<group>"; };
 		B30B69A8978F54C4CCA21C6340F94AF6 /* Pods-Tourist Helper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tourist Helper.release.xcconfig"; sourceTree = "<group>"; };
 		B641EB6BCBAC49D21F83E74CFEE6FC12 /* Pods-Tourist HelperUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Tourist HelperUITests.modulemap"; sourceTree = "<group>"; };
-		BD267D828AE1E034D07B6E89399D3E89 /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = "AppCenter-SDK-Apple/iOS/AppCenterCrashes.framework"; sourceTree = "<group>"; };
+		BD489CE0CC1A7D81815C5000387851FB /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = "AppCenter-SDK-Apple/iOS/AppCenterAnalytics.framework"; sourceTree = "<group>"; };
 		BF3EEF837EBF06AD62018EA55138A657 /* Pods-Tourist Helper-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tourist Helper-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C74AF9051AEB1135E0F8735173BB8C28 /* Pods-Tourist HelperUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tourist HelperUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C7CE62680FF2612CE5E0702D1E11C120 /* Pods-Tourist HelperTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tourist HelperTests-umbrella.h"; sourceTree = "<group>"; };
 		E18C62454A4CAA6A14321B36194323F9 /* Pods-Tourist Helper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Tourist Helper.modulemap"; sourceTree = "<group>"; };
+		E37CA864159FBF3DEE874F4F3805C8EA /* AppCenterPush.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterPush.framework; path = "AppCenter-SDK-Apple/iOS/AppCenterPush.framework"; sourceTree = "<group>"; };
 		E627CBEA9392817812DA876DF7EDB256 /* Pods-Tourist Helper-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tourist Helper-acknowledgements.plist"; sourceTree = "<group>"; };
 		E64DEEAB2E35AF985670346DAA783AEA /* Pods-Tourist HelperTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tourist HelperTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		E80EABE1F60183089680FB55A597A691 /* Pods_Tourist_HelperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Tourist_HelperTests.framework; path = "Pods-Tourist HelperTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,23 +105,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F08D6AAC5F3212BEF9AE67BA27BB985 /* Pods */ = {
+		007B2DD257A5EE864C1BAD7389D7215A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				26382BECC33D3A0DB32AEEFB179E5805 /* AppCenter */,
+				BD489CE0CC1A7D81815C5000387851FB /* AppCenterAnalytics.framework */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		26382BECC33D3A0DB32AEEFB179E5805 /* AppCenter */ = {
-			isa = PBXGroup;
-			children = (
-				532FCA275C043189A13FDDD5A9BDE415 /* Analytics */,
-				9EE13F7E6DB656EA069185A561AFA2DE /* Core */,
-				7887D30DE6098B8B49964BA5EDB1C9D5 /* Crashes */,
-			);
-			name = AppCenter;
-			path = AppCenter;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		4ACB9B2E3B2AC5835F01421A23D63255 /* Pods-Tourist HelperTests */ = {
@@ -141,12 +131,32 @@
 			path = "Target Support Files/Pods-Tourist HelperTests";
 			sourceTree = "<group>";
 		};
-		532FCA275C043189A13FDDD5A9BDE415 /* Analytics */ = {
+		4E9569E6C11D65F2A830BC8DEDE55DBE /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				A4258E8EA78F9E8E72A5B6E20E8F43D6 /* Frameworks */,
+				AAEE002756E4594EE05F753F5FE5FA81 /* Frameworks */,
 			);
-			name = Analytics;
+			name = Core;
+			sourceTree = "<group>";
+		};
+		4F23C05264DCFC9473AE0733D8F2853A /* Push */ = {
+			isa = PBXGroup;
+			children = (
+				A165067F8C931D2C85742D6B4FB304C3 /* Frameworks */,
+			);
+			name = Push;
+			sourceTree = "<group>";
+		};
+		5364D16F12C1704573AF8E776B05D1E5 /* AppCenter */ = {
+			isa = PBXGroup;
+			children = (
+				A07553EBE79A777A566BB7D08F489EE4 /* Analytics */,
+				4E9569E6C11D65F2A830BC8DEDE55DBE /* Core */,
+				EF9FEC41A271EB8FC7AAD0BEB08B8C36 /* Crashes */,
+				4F23C05264DCFC9473AE0733D8F2853A /* Push */,
+			);
+			name = AppCenter;
+			path = AppCenter;
 			sourceTree = "<group>";
 		};
 		53A58F14E6C58C8A0D620822E2874F31 /* Pods-Tourist Helper */ = {
@@ -177,45 +187,45 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		66122652B1024E946ECEA52DFABA11A7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BD267D828AE1E034D07B6E89399D3E89 /* AppCenterCrashes.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7887D30DE6098B8B49964BA5EDB1C9D5 /* Crashes */ = {
-			isa = PBXGroup;
-			children = (
-				66122652B1024E946ECEA52DFABA11A7 /* Frameworks */,
-			);
-			name = Crashes;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				0F08D6AAC5F3212BEF9AE67BA27BB985 /* Pods */,
+				88BAA8D6162961ACBFFF1C61E2A82436 /* Pods */,
 				62303B6728A12F76C6EB16E9618460F3 /* Products */,
 				C578FF95F106FD8253F94891A70BD342 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		9EE13F7E6DB656EA069185A561AFA2DE /* Core */ = {
+		88BAA8D6162961ACBFFF1C61E2A82436 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E39FB8A4CA783BA2FB45AFE8CCE436C4 /* Frameworks */,
+				5364D16F12C1704573AF8E776B05D1E5 /* AppCenter */,
 			);
-			name = Core;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		A4258E8EA78F9E8E72A5B6E20E8F43D6 /* Frameworks */ = {
+		A07553EBE79A777A566BB7D08F489EE4 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				5351CBD2DE9358535B624F45830298EA /* AppCenterAnalytics.framework */,
+				007B2DD257A5EE864C1BAD7389D7215A /* Frameworks */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		A165067F8C931D2C85742D6B4FB304C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E37CA864159FBF3DEE874F4F3805C8EA /* AppCenterPush.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AAEE002756E4594EE05F753F5FE5FA81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9454C46A42EE2F6A8F78EBBD99E6347B /* AppCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -264,10 +274,18 @@
 			path = "Target Support Files/Pods-Tourist HelperUITests";
 			sourceTree = "<group>";
 		};
-		E39FB8A4CA783BA2FB45AFE8CCE436C4 /* Frameworks */ = {
+		EF9FEC41A271EB8FC7AAD0BEB08B8C36 /* Crashes */ = {
 			isa = PBXGroup;
 			children = (
-				275DEAAB07AB38756C25FF9F36046103 /* AppCenter.framework */,
+				F7731C429EAE0238B22E89DF57BC0F1B /* Frameworks */,
+			);
+			name = Crashes;
+			sourceTree = "<group>";
+		};
+		F7731C429EAE0238B22E89DF57BC0F1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53A158CE3C0C4CE842F9F8C142DB9821 /* AppCenterCrashes.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

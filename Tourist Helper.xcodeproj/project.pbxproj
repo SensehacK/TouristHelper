@@ -52,6 +52,7 @@
 		1C0702A37925A9E7B223BA1B /* Pods_Tourist_HelperUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tourist_HelperUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43B6DB8920356286000D7915 /* Launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch.png; sourceTree = "<group>"; };
 		43E6C0DA20A16ED30016FD47 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		43EC146C20A1E4780073C6DE /* Tourist Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tourist Helper.entitlements"; sourceTree = "<group>"; };
 		45B3BA02652D8CF758C6351A /* Pods-Tourist Helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tourist Helper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tourist Helper/Pods-Tourist Helper.debug.xcconfig"; sourceTree = "<group>"; };
 		6816B7D968DD91D2B566359F /* Pods_Tourist_HelperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tourist_HelperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68BCE728A526D2AE25C14205 /* Pods-Tourist HelperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tourist HelperUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tourist HelperUITests/Pods-Tourist HelperUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +162,7 @@
 		FB53035F1E0960D2008A405D /* Tourist Helper */ = {
 			isa = PBXGroup;
 			children = (
+				43EC146C20A1E4780073C6DE /* Tourist Helper.entitlements */,
 				FB5303601E0960D2008A405D /* AppDelegate.swift */,
 				FB5303641E0960D2008A405D /* Main.storyboard */,
 				43E6C0DA20A16ED30016FD47 /* Podfile */,
@@ -314,6 +316,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 299VAT3WU6;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					FB5303731E0960D2008A405D = {
 						CreatedOnToolsVersion = 8.0;
@@ -609,6 +616,7 @@
 				PROVISIONING_PROFILE = "02ac58ce-34cf-4ad1-bd08-1aa2e2ed1c88";
 				PROVISIONING_PROFILE_SPECIFIER = "PwC Internal Apps Dev Profile";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -626,6 +634,7 @@
 				PROVISIONING_PROFILE = "02ac58ce-34cf-4ad1-bd08-1aa2e2ed1c88";
 				PROVISIONING_PROFILE_SPECIFIER = "PwC Internal Apps Dev Profile";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
