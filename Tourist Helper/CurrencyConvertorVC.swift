@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource {
+class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource , UITextFieldDelegate {
     
     //Instance class object
     let NetworkCC = CurrencyConvertorNetwork()
@@ -40,7 +40,8 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        amountToBeConvertedTextField.delegate = self
+        amountToBeConvertedTextField.keyboardType = .numberPad
         // UI extension for gesture initializer for dismiss keyboard
         hideKeyboardWhenTappedAround()
         
@@ -69,7 +70,12 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
         
         
     }// view did load ends
-         
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let invalidCharacters = CharacterSet(charactersIn: "0123456789").inverted
+        return string.rangeOfCharacter(from: invalidCharacters, options: [], range: string.startIndex ..< string.endIndex) == nil
+    }
+    
  
     // MARK: IBAction
     
@@ -80,6 +86,12 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
             showAlert(title: "Empty Value", message: "Please enter some value")
             return
         }
+        
+//        guard (amountToBeConvertedTextField.text?.isdeci)! == false else {
+//            showAlert(title: "Empty Value", message: "Please enter some value")
+//            return
+//        }
+        
         
         if selectedCurrency == 0.0 {
             
