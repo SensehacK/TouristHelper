@@ -33,3 +33,11 @@ Icons by icons 8 https://icons8.com/
 
 SensehacK
 
+
+## Contribution
+
+Feel free to fork this project & raise a pull request to add more relevant information regarding development tools used in iOS ecosystem.
+
+## Authored by : Kautilya Save
+
+### [GitHub](https://github.com/SensehacK)
