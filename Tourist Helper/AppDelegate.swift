@@ -14,6 +14,9 @@ import AppCenterAnalytics
 import AppCenterCrashes
 //Visual Studio Notification Integration
 import AppCenterPush
+//Google Firebase Integration
+import Firebase
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MSAppCenter.start("854867ea-46e4-49f0-8a46-d5acb17c2eef", withServices:[ MSAnalytics.self, MSCrashes.self ])
         //Calling Visual Studio App Center Push tracker
         MSAppCenter.start("{854867ea-46e4-49f0-8a46-d5acb17c2eef}", withServices: [MSPush.self])
+        //Calling Google Firebase Integration tracker
+        FirebaseApp.configure()
+        
         return true
     }
 

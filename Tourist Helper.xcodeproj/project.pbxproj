@@ -10,6 +10,7 @@
 		1BDEEA3B314685A8D113A4C4 /* Pods_Tourist_Helper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E32D5125A24C579C4F394C /* Pods_Tourist_Helper.framework */; };
 		43B6DB8A20356286000D7915 /* Launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B6DB8920356286000D7915 /* Launch.png */; };
 		43E6C0DB20A16ED30016FD47 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 43E6C0DA20A16ED30016FD47 /* Podfile */; };
+		43EC146E20A2F4AC0073C6DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43EC146D20A2F4AC0073C6DE /* GoogleService-Info.plist */; };
 		674DA3B37FD73EC48D22B92B /* Pods_Tourist_HelperUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0702A37925A9E7B223BA1B /* Pods_Tourist_HelperUITests.framework */; };
 		6FC73E5848F7D169896A689F /* Pods_Tourist_HelperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6816B7D968DD91D2B566359F /* Pods_Tourist_HelperTests.framework */; };
 		FB41C03A1E0D8F0800B5F80F /* CurrencyConvertorNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB41C0391E0D8F0800B5F80F /* CurrencyConvertorNetwork.swift */; };
@@ -53,6 +54,7 @@
 		43B6DB8920356286000D7915 /* Launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch.png; sourceTree = "<group>"; };
 		43E6C0DA20A16ED30016FD47 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		43EC146C20A1E4780073C6DE /* Tourist Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tourist Helper.entitlements"; sourceTree = "<group>"; };
+		43EC146D20A2F4AC0073C6DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45B3BA02652D8CF758C6351A /* Pods-Tourist Helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tourist Helper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tourist Helper/Pods-Tourist Helper.debug.xcconfig"; sourceTree = "<group>"; };
 		6816B7D968DD91D2B566359F /* Pods_Tourist_HelperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tourist_HelperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68BCE728A526D2AE25C14205 /* Pods-Tourist HelperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tourist HelperUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tourist HelperUITests/Pods-Tourist HelperUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				FB53036A1E0960D2008A405D /* Assets.xcassets */,
 				FB53036C1E0960D2008A405D /* LaunchScreen.storyboard */,
 				FB53036F1E0960D2008A405D /* Info.plist */,
+				43EC146D20A2F4AC0073C6DE /* GoogleService-Info.plist */,
 			);
 			name = Extras;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				FB5303591E0960D1008A405D /* Sources */,
 				FB53035A1E0960D1008A405D /* Frameworks */,
 				FB53035B1E0960D1008A405D /* Resources */,
+				64F3C863C5CF6E846DF93E11 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -314,6 +318,7 @@
 				TargetAttributes = {
 					FB53035C1E0960D1008A405D = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = LGQH99U6M2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -363,6 +368,7 @@
 				FB53036E1E0960D2008A405D /* LaunchScreen.storyboard in Resources */,
 				FB53036B1E0960D2008A405D /* Assets.xcassets in Resources */,
 				FB5303661E0960D2008A405D /* Main.storyboard in Resources */,
+				43EC146E20A2F4AC0073C6DE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +389,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		64F3C863C5CF6E846DF93E11 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Tourist Helper/Pods-Tourist Helper-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tourist Helper/Pods-Tourist Helper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		858D068E8570443C34160259 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -531,7 +557,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -580,7 +606,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -608,7 +634,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LGQH99U6M2;
 				INFOPLIST_FILE = "Tourist Helper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kautilyasave.Tourist-Helper";
@@ -627,7 +653,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LGQH99U6M2;
 				INFOPLIST_FILE = "Tourist Helper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kautilyasave.Tourist-Helper";

@@ -11,7 +11,9 @@ target 'Tourist Helper' do
   
   # Adding pod file for Push SDK
   pod 'AppCenter/Push'
-
+  
+  # Adding pod file for Firebase SDK
+  pod 'Firebase/Core'
   target 'Tourist HelperTests' do
     inherit! :search_paths
     # Pods for testing
