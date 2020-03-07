@@ -117,23 +117,16 @@ class CurrencyConvertorVC: UIViewController , UIPickerViewDelegate , UIPickerVie
     
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-       
-        
         return currencyCountrySS.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-
        return currencyCountrySS[row]
-
     }
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        print("currencyRateSS[row] ")
-        print(currencyRateSS[row])
-        
+        print("currencyRateSS[row] ",currencyRateSS[row])
         selectedCurrency = currencyRateSS[row]
     }
     
